@@ -77,15 +77,16 @@ const ContactConsultation = () => {
 
     setIsSubmitted(true);
 
-    alert(response.data.message);
+    alert(response.data.message || "Thanks. Your message has been received.");
 
     setFormData(initialForm);
 
   } catch (error) {
-
     console.error(error);
-
-    alert("Something went wrong!");
+    alert(
+      error.response?.data?.message ||
+        "We could not send your message. Please try again later.",
+    );
 
   }
 };

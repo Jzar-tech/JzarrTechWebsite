@@ -63,15 +63,16 @@ const ContactSection = ({ id = "contact" }) => {
 
     const response = await axios.post(CONTACT_API_URL, contactPayload);
 
-    alert(response.data.message);
+    alert(response.data.message || "Thanks. Your message has been received.");
 
     setFormData(initialForm);
 
   } catch (error) {
-
-    console.log(error);
-
-    alert("Something went wrong!");
+    console.error(error);
+    alert(
+      error.response?.data?.message ||
+        "We could not send your message. Please try again later.",
+    );
 
   }
 };

@@ -5,7 +5,7 @@ Single repository containing the JzarrTech frontend and backend.
 ## Projects
 
 - `jzarrtech` - React frontend
-- `jzarrtechserver` - Express contact-form backend
+- `jzarrtechserver` - production mail-only Express contact API
 
 ## Local commands
 
@@ -15,8 +15,11 @@ npm run server
 npm run build
 ```
 
-## Previous split repositories
+## Backend configuration
 
-- Frontend: `git@github.com:sharjeeljzarr-creator/jzarrtech.git`
-- Backend: `git@github.com:sharjeeljzarr-creator/jzarrtechserver.git`
+The backend intentionally has no database or admin dashboard. It exposes
+`POST /api/contact` and `GET /api/health`.
 
+Create its environment configuration from `jzarrtechserver/.env.example`.
+Production secrets belong only in the server-side `.env` and must not be
+committed.
