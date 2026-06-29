@@ -1,0 +1,222 @@
+
+/* ==========================
+   BUSINESS CTA SECTION
+========================== */
+
+.business5 {
+  padding: 10px 8%;
+  background: #ffffff;
+}
+
+.business5-container {
+  position: relative;
+
+  max-width: 1300px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  padding: 40px 50px;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5 0%,
+      #6d28d9 50%,
+      #7c3aed 100%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(124,58,237,.25);
+}
+
+/* Glow Effects */
+
+.business5-container::before {
+  content: "";
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: -120px;
+  top: -120px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  z-index: 1;
+}
+
+.business5-container::after {
+  content: "";
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -80px;
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.06);
+
+  z-index: 1;
+}
+
+/* Icon */
+
+.business5-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 110px;
+  height: 110px;
+
+  min-width: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 48px;
+
+  color: #fff;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.15);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+}
+
+/* Content */
+
+.business5-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.business5-tag {
+  display: block;
+
+  color: rgba(255,255,255,.8);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.business5-content h2 {
+  color: #fff;
+
+  font-size: 2.5rem;
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.business5-content p {
+  color: rgba(255,255,255,.85);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Button */
+
+.business5-btn {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 18px 32px;
+
+  background: #fff;
+
+  color: #6d28d9;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  border-radius: 16px;
+
+  transition: .4s ease;
+
+  white-space: nowrap;
+}
+
+.business5-btn:hover {
+  transform: translateY(-5px);
+
+  background: #f8fafc;
+
+  box-shadow:
+    0 15px 40px rgba(255,255,255,.25);
+}
+
+.business5-btn svg {
+  transition: .4s ease;
+}
+
+.business5-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .business5-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .business5-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .business5 {
+    padding: 60px 5%;
+  }
+
+  .business5-container {
+    padding: 35px 25px;
+  }
+
+  .business5-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .business5-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

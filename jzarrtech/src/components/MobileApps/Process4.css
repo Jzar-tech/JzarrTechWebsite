@@ -1,0 +1,162 @@
+
+.process4-section {
+  padding: 40px 20px;
+  background:
+    radial-gradient(circle at center,
+    #10174d 0%,
+    #050816 60%,
+    #02030d 100%);
+}
+
+.process4-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.process4-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.process4-header span {
+  color: #8b5cf6;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.process4-header h2 {
+  color: white;
+
+  font-size: 48px;
+  font-weight: 800;
+
+  margin-top: 12px;
+}
+
+.process4-timeline {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 25px;
+}
+
+.process4-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 42px;
+  left: 8%;
+  right: 8%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #6366f1
+    );
+
+  opacity: .3;
+}
+
+.process4-card {
+  text-align: center;
+  position: relative;
+}
+
+.process4-circle {
+  position: relative;
+
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 25px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(139,92,246,.5);
+
+  background:
+    rgba(255,255,255,.03);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: .4s;
+}
+
+.process4-icon {
+  color: #8b5cf6;
+  font-size: 28px;
+}
+
+.process4-circle span {
+  position: absolute;
+
+  bottom: -20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #8b5cf6;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.process4-card h3 {
+  color: white;
+
+  font-size: 22px;
+  line-height: 1.4;
+
+  margin-bottom: 12px;
+}
+
+.process4-card p {
+  color: rgba(255,255,255,.7);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.process4-card:hover .process4-circle {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 0 30px rgba(139,92,246,.5);
+
+  background:
+    rgba(139,92,246,.15);
+}
+
+@media (max-width: 1200px) {
+  .process4-timeline {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 60px;
+  }
+
+  .process4-timeline::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .process4-header h2 {
+    font-size: 34px;
+  }
+
+  .process4-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+

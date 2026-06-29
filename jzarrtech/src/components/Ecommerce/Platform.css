@@ -1,0 +1,202 @@
+.platform-section {
+  padding: 40px 20px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%,
+      rgba(99,102,241,0.08),
+      transparent 40%),
+    radial-gradient(circle at 80% 70%,
+      rgba(59,130,246,0.08),
+      transparent 40%);
+}
+
+.platform-container {
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.platform-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.platform-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: rgba(99,102,241,0.08);
+  color: #6366f1;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.platform-header h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.platform-header h2 span {
+  color: #6366f1;
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.platform-card {
+  position: relative;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid #edf2f7;
+  border-radius: 28px;
+  padding: 45px 30px;
+  text-align: center;
+  overflow: hidden;
+
+  transition: all .45s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.04);
+}
+
+.platform-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle,
+      var(--accent),
+      transparent 70%
+    );
+
+  opacity: 0;
+  filter: blur(100px);
+  transition: .5s;
+}
+
+.platform-card:hover::before {
+  opacity: .15;
+}
+
+.platform-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--accent);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.08);
+}
+
+.platform-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 70px;
+  color: var(--accent);
+
+  transition: all 0.4s ease;
+}
+
+.platform-card:hover .platform-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.platform-card h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.platform-card p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.platform-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #6366f1;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: .3s;
+}
+
+.platform-card:hover a {
+  gap: 12px;
+}
+
+.platform-shimmer {
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 50%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.7),
+      transparent
+    );
+
+  transform: skewX(-25deg);
+}
+
+.platform-card:hover .platform-shimmer {
+  animation: shimmer 1s ease;
+}
+
+.platform-ebay-logo {
+  font-size: 58px;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 150%;
+  }
+}
+
+@media (max-width: 992px) {
+  .platform-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-header h2 {
+    font-size: 34px;
+  }
+}

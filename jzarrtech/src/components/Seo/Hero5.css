@@ -1,0 +1,509 @@
+/* ====================================
+   HERO SECTION
+==================================== */
+
+.seo-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background: #020617;
+}
+
+/* ====================================
+   VIDEO BACKGROUND
+==================================== */
+
+.seo-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 1;
+}
+
+/* Dark Overlay */
+
+.seo-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.95) 0%,
+      rgba(2, 6, 23, 0.85) 45%,
+      rgba(2, 6, 23, 0.75) 100%
+    );
+
+  z-index: 2;
+}
+
+/* ====================================
+   CONTENT
+==================================== */
+
+.seo-container {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 140px 80px 80px;
+}
+
+.seo-left {
+  max-width: 650px;
+}
+
+/* ====================================
+   TAG
+==================================== */
+
+.seo-tag {
+  display: inline-block;
+
+  color: #8b5cf6;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+}
+
+/* ====================================
+   HEADING
+==================================== */
+
+.seo-left h1 {
+  color: white;
+
+  font-size: 72px;
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  margin-bottom: 24px;
+}
+
+.seo-left h1 span {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ====================================
+   DESCRIPTION
+==================================== */
+
+.seo-left p {
+  color: #cbd5e1;
+
+  font-size: 18px;
+  line-height: 1.9;
+
+  max-width: 620px;
+
+  margin-bottom: 40px;
+}
+
+/* ====================================
+   BUTTONS
+==================================== */
+
+
+/* ====================================
+   BUTTON CLICK FIX
+==================================== */
+
+.seo-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+
+  /* IMPORTANT */
+  pointer-events: none;
+}
+
+.seo-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.95) 0%,
+      rgba(2, 6, 23, 0.85) 45%,
+      rgba(2, 6, 23, 0.75) 100%
+    );
+
+  z-index: 2;
+
+  /* IMPORTANT */
+  pointer-events: none;
+}
+
+.seo-container {
+  position: relative;
+  z-index: 999;
+}
+
+.seo-left {
+  position: relative;
+  z-index: 999;
+}
+
+.seo-buttons {
+  position: relative;
+  z-index: 999;
+
+  display: flex;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.seo-btn-primary,
+.seo-btn-secondary {
+  position: relative;
+  z-index: 9999;
+
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.seo-btn-primary {
+  height: 58px;
+  padding: 0 30px;
+
+  border: none;
+  border-radius: 14px;
+
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: 1;
+
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  transition: all .4s ease;
+}
+
+.seo-btn-primary svg {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.seo-btn-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 40px rgba(59,130,246,.35);
+}
+
+.seo-btn-secondary {
+  height: 58px;
+  padding: 0 30px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  background: rgba(255,255,255,.05);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  transition: all .4s ease;
+}
+
+.seo-btn-secondary:hover {
+  background: rgba(255,255,255,.12);
+  transform: translateY(-4px);
+}
+
+
+/* ====================================
+   FEATURES
+==================================== */
+
+/* ====================================
+   PREMIUM FEATURES
+==================================== */
+
+.seo-features {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap; /* 1 row */
+  gap: 14px;
+  margin-top: 15px;
+}
+
+.seo-feature {
+  width: 145px;
+  height: 125px; /* Fixed Height */
+
+  padding: 16px 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: all 0.4s ease;
+}
+
+.seo-feature svg {
+  font-size: 22px;
+  color: #8b5cf6;
+  margin-bottom: 10px;
+}
+
+.seo-feature span {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.9);
+}
+
+.seo-feature:hover {
+  transform: translateY(-6px);
+  border-color: #8b5cf6;
+  box-shadow: 0 12px 30px rgba(139,92,246,0.2);
+}
+
+@media (max-width: 768px) {
+  .seo-features {
+    flex-wrap: wrap;
+  }
+
+  .seo-feature {
+    width: calc(50% - 7px);
+  }
+}
+
+/* Glow Effect */
+
+.seo-feature::before {
+  content: "";
+
+  position: absolute;
+  top: -100px;
+  left: -100px;
+
+  width: 220px;
+  height: 220px;
+
+  background: radial-gradient(
+    circle,
+    rgba(139,92,246,0.35),
+    transparent 70%
+  );
+
+  opacity: 0;
+
+  transition: 0.5s;
+}
+
+.seo-feature:hover::before {
+  opacity: 1;
+}
+
+.seo-feature:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(139,92,246,0.45);
+
+  box-shadow:
+    0 20px 40px rgba(139,92,246,0.18),
+    0 0 25px rgba(59,130,246,0.15);
+}
+
+.seo-feature svg {
+  font-size: 30px;
+  color: #8b5cf6;
+
+  margin-bottom: 14px;
+
+  transition: all .4s ease;
+}
+
+.seo-feature:hover svg {
+  color: #ffffff;
+
+  transform: scale(1.15) rotate(8deg);
+}
+
+.seo-feature span {
+  color: rgba(255,255,255,0.9);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.6;
+
+  transition: .4s;
+}
+
+.seo-feature:hover span {
+  color: #ffffff;
+}
+
+/* Different Hover Colors */
+
+.seo-feature:nth-child(1):hover {
+  border-color: #8b5cf6;
+}
+
+.seo-feature:nth-child(2):hover {
+  border-color: #3b82f6;
+}
+
+.seo-feature:nth-child(3):hover {
+  border-color: #06b6d4;
+}
+
+.seo-feature:nth-child(4):hover {
+  border-color: #ec4899;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .seo-features {
+    gap: 15px;
+  }
+
+  .seo-feature {
+    width: calc(50% - 8px);
+    min-height: 105px;
+  }
+
+  .seo-feature span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seo-feature {
+    width: 100%;
+  }
+}
+
+/* Consistent service hero sizing */
+.seo-hero {
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+.seo-container {
+  box-sizing: border-box;
+  padding: clamp(90px, 12vh, 120px) 6% clamp(40px, 8vh, 80px);
+}
+
+.seo-tag {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.seo-left h1 {
+  font-size: clamp(2.35rem, 5vw, 4.5rem);
+  line-height: 1.08;
+}
+
+.seo-left p {
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.75;
+  margin-bottom: clamp(24px, 4vh, 36px);
+}
+
+.seo-buttons {
+  margin-bottom: clamp(28px, 5vh, 44px);
+}
+
+@media (max-width: 768px) {
+  .seo-container {
+    padding: 82px 5% 40px;
+  }
+}
+/* ====================================
+   RESPONSIVE
+==================================== */
+
+@media (max-width: 992px) {
+
+  .seo-container {
+    padding: 120px 25px 70px;
+  }
+
+  .seo-left h1 {
+    font-size: 50px;
+  }
+
+  .seo-buttons {
+    flex-direction: column;
+  }
+
+  .seo-btn-primary,
+  .seo-btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .seo-left h1 {
+    font-size: 42px;
+  }
+
+  .seo-left p {
+    font-size: 16px;
+  }
+
+  .seo-features {
+    gap: 20px;
+  }
+}

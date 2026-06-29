@@ -1,0 +1,162 @@
+.blog-sidebar {
+  width: 100%;
+  position: sticky;
+  top: 100px;
+}
+.sidebar-card {
+  background: #ffffff;
+  padding: 28px;
+  margin-bottom: 24px;
+
+  border-radius: 24px;
+  border: 1px solid #e7eef7;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.sidebar-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.sidebar-card h3 {
+  color: #07122f;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* SEARCH */
+
+.search-box {
+  display: flex;
+  width: 100%;
+
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.search-box input {
+  flex: 1;
+
+  height: 54px;
+
+  border: none;
+  outline: none;
+
+  padding: 0 18px;
+
+  font-size: 14px;
+}
+
+.search-box button {
+  width: 60px;
+
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  cursor: pointer;
+}
+
+/* RECENT POSTS */
+
+.recent-post {
+  display: flex;
+  gap: 14px;
+
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+
+  border-bottom: 1px solid #edf2f7;
+}
+
+.recent-post:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.recent-post img {
+  width: 95px;
+  height: 75px;
+
+  border-radius: 12px;
+  object-fit: cover;
+
+  flex-shrink: 0;
+}
+
+.recent-post small {
+  display: block;
+
+  color: #94a3b8;
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+.recent-post p {
+  margin: 0;
+
+  color: #07122f;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* CATEGORIES */
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #edf2f7;
+
+  color: #475569;
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+/* TAGS */
+
+.tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #475569;
+}
+
+/* MOBILE */
+
+@media (max-width: 992px) {
+
+  .blog-sidebar {
+    position: static;
+    margin-top: 40px;
+  }
+}

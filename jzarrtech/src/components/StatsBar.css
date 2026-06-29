@@ -1,0 +1,212 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stats-bar {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(96,165,250,0.2),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #1e3a8a 50%,
+      #2563eb 100%
+    );
+
+  padding: 45px 30px;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 20px 60px rgba(37,99,235,.25);
+}
+
+/* Premium Glow */
+
+.stats-bar::before {
+  content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -150px;
+  left: -150px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.08);
+
+  filter: blur(80px);
+}
+
+.stats-bar::after {
+  content: "";
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(96,165,250,.15);
+
+  filter: blur(80px);
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  flex: 1;
+
+  padding: 15px 20px;
+
+  text-align: center;
+
+  border-right:
+    1px solid rgba(255,255,255,.12);
+
+  transition: all .4s ease;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+/* Hover Effect */
+
+.stat-item:hover {
+  transform: translateY(-8px);
+}
+
+.stat-item h2 {
+  font-size: 56px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  margin-bottom: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fbbf24,
+      #f59e0b
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: pulseNumber 3s infinite;
+}
+
+.stat-item h4 {
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  color: rgba(255,255,255,.75);
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  max-width: 220px;
+  margin: auto;
+}
+
+/* Number Animation */
+
+@keyframes pulseNumber {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+  }
+
+  .stat-item {
+    border-right: none;
+  }
+
+  .stat-item h2 {
+    font-size: 46px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .stats-bar {
+    padding: 35px 20px;
+    border-radius: 20px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item h2 {
+    font-size: 42px;
+  }
+
+  .stat-item h4 {
+    font-size: 18px;
+  }
+
+  .stat-item p {
+    font-size: 13px;
+  }
+}
+

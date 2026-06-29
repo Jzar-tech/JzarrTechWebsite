@@ -1,0 +1,84 @@
+.worldwide-reach {
+  background: #f8fafc;
+  padding: 40px;
+  text-align: center;
+}
+
+.reach-icon {
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eef4ff;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.reach-icon svg {
+  font-size: 26px;
+  color: #2563eb;
+}
+
+.worldwide-reach h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #07122f;
+  margin-bottom: 15px;
+}
+
+.worldwide-reach h2 span {
+  color: #2563eb;
+}
+
+.worldwide-reach p {
+  max-width: 700px;
+  margin: 0 auto;
+
+  font-size: 18px;
+  line-height: 1.6;
+  color: #3f5677;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .worldwide-reach h2 {
+    font-size: 38px;
+  }
+
+  .worldwide-reach p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .worldwide-reach {
+    padding: 60px 15px;
+  }
+
+  .worldwide-reach h2 {
+    font-size: 30px;
+  }
+
+  .worldwide-reach p {
+    font-size: 14px;
+  }
+
+  .reach-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reach-icon svg {
+    font-size: 22px;
+  }
+}

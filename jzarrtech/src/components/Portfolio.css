@@ -1,0 +1,192 @@
+.portfolio {
+padding: 10px 6%;
+background: #ffffff;
+}
+
+.portfolio-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 40px;
+}
+
+.portfolio-header h2 {
+font-size: 48px;
+font-weight: 800;
+color: #07122f;
+}
+
+.portfolio-header span {
+color: #2b7fff;
+}
+
+.portfolio-header p {
+margin-top: 8px;
+color: #666;
+font-size: 15px;
+}
+
+.view-all-btn {
+background: transparent;
+border: none;
+color: #2b7fff;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+}
+
+.portfolio-slider-wrap {
+position: relative;
+}
+
+.portfolio-slider {
+display: flex;
+gap: 25px;
+
+overflow-x: auto;
+overflow-y: hidden;
+
+scroll-behavior: smooth;
+
+cursor: grab;
+
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+
+.portfolio-slider::-webkit-scrollbar {
+display: none;
+}
+
+.portfolio-slider:active {
+cursor: grabbing;
+}
+
+.portfolio-arrow {
+position: absolute;
+top: 130px;
+z-index: 5;
+
+width: 46px;
+height: 46px;
+
+border: 1px solid #dbe4f0;
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: rgba(255, 255, 255, 0.95);
+color: #07122f;
+
+box-shadow: 0 14px 35px rgba(15, 23, 42, 0.14);
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.portfolio-arrow:hover {
+background: #2563eb;
+border-color: #2563eb;
+color: #ffffff;
+transform: translateY(-2px);
+}
+
+.portfolio-arrow-left {
+left: -23px;
+}
+
+.portfolio-arrow-right {
+right: -23px;
+}
+
+.project-card {
+min-width: 420px;
+max-width: 420px;
+flex-shrink: 0;
+}
+
+.image-wrapper {
+position: relative;
+overflow: hidden;
+border-radius: 20px;
+}
+
+.image-wrapper img {
+width: 100%;
+height: 260px;
+object-fit: cover;
+border-radius: 20px;
+transition: 0.4s ease;
+}
+
+.project-card:hover img {
+transform: scale(1.05);
+}
+
+.category {
+display: block;
+margin-top: 15px;
+
+color: #2563eb;
+font-size: 12px;
+font-weight: 700;
+
+letter-spacing: 1px;
+}
+
+.project-card h3 {
+margin-top: 8px;
+font-size: 28px;
+color: #07122f;
+}
+
+.project-card p {
+margin-top: 8px;
+font-size: 15px;
+line-height: 1.7;
+color: #666;
+}
+
+@media (max-width: 768px) {
+.portfolio {
+padding: 60px 20px;
+}
+
+.portfolio-header {
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+}
+
+.portfolio-header h2 {
+font-size: 34px;
+}
+
+.project-card {
+min-width: 300px;
+max-width: 300px;
+}
+
+.image-wrapper img {
+height: 200px;
+}
+
+.portfolio-arrow {
+top: 100px;
+width: 40px;
+height: 40px;
+}
+
+.portfolio-arrow-left {
+left: -12px;
+}
+
+.portfolio-arrow-right {
+right: -12px;
+}
+
+.project-card h3 {
+font-size: 22px;
+}
+}

@@ -1,0 +1,166 @@
+.blog-hero {
+  position: relative;
+
+  background: #f9fbff;
+
+  min-height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* CONTENT */
+
+.blog-hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+
+  padding-top: 60px; /* pehle nahi tha */
+}
+
+
+.blog-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  background: #eef3ff;
+
+  color: #3563ff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 40px; /* 30px se zyada */
+}
+.blog-hero-content h1 {
+  font-size: 96px;
+  font-weight: 800;
+
+  color: #000;
+
+  margin-bottom: 25px;
+}
+
+.blog-hero-content p {
+  max-width: 650px;
+
+  margin: auto;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: #64748b;
+}
+
+/* BREADCRUMB */
+
+.blog-breadcrumb {
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 20px; /* pehle 28px tha */
+  font-weight: 500;
+}
+
+.blog-breadcrumb span {
+  color: #07122f;
+}
+
+.blog-breadcrumb .active {
+  color: #2563eb;
+}
+/* LEFT CIRCLE */
+
+.blob-left {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99,102,241,.25),
+      transparent
+    );
+
+  top: -120px;
+  left: -120px;
+}
+
+/* RIGHT CIRCLE */
+
+.blob-right {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99,102,241,.15),
+      transparent
+    );
+
+  bottom: -160px;
+  right: -140px;
+}
+
+/* WAVE PATTERN */
+
+.wave-pattern {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: .35;
+
+  background-image:
+    repeating-radial-gradient(
+      circle at center,
+      transparent 0,
+      transparent 16px,
+      rgba(148,163,184,.15) 17px,
+      rgba(148,163,184,.15) 18px
+    );
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .blog-hero {
+    min-height: 420px;
+    padding: 40px 20px;
+  }
+
+  .blog-hero-content h1 {
+    font-size: 60px;
+  }
+
+  .blog-hero-content p {
+    font-size: 15px;
+  }
+
+  .blog-breadcrumb {
+    font-size: 15px;
+  }
+}

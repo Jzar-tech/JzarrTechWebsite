@@ -1,0 +1,343 @@
+/* ====================================
+   HERO SECTION
+==================================== */
+
+.apihero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #050816;
+}
+
+/* ====================================
+   VIDEO BACKGROUND
+==================================== */
+
+.apihero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.apihero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 6, 23, 0.92) 0%,
+    rgba(2, 6, 23, 0.85) 40%,
+    rgba(2, 6, 23, 0.65) 100%
+  );
+  z-index: 2;
+}
+
+/* ====================================
+   CONTAINER
+==================================== */
+
+.apihero-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ====================================
+   LEFT CONTENT
+==================================== */
+
+.apihero-left {
+  max-width: 750px;
+}
+
+.apihero-tag {
+  display: inline-block;
+  margin-bottom: 80px;
+
+  color: #8b5cf6;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.apihero-left h1 {
+  font-size: 4.5rem;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08em;
+  overflow: visible;
+}
+
+.apihero-left h1 span {
+  display: block;
+  line-height: 1.12;
+  overflow: visible;
+
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #6366f1,
+    #a855f7
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.apihero-left h1 .apihero-heading-main {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+}
+
+.apihero-left h1 .apihero-heading-accent {
+  line-height: 1.12;
+  padding-bottom: 0.08em;
+}
+
+.apihero-left p {
+  max-width: 650px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 1.15rem;
+  line-height: 1.9;
+
+  margin-bottom: 40px;
+}
+
+/* ====================================
+   BUTTONS
+==================================== */
+
+.apihero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.apihero-btn-primary,
+.apihero-btn-secondary {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.4s ease;
+}
+
+.apihero-btn-primary {
+  padding: 18px 30px;
+
+  color: white;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #6366f1
+  );
+
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
+.apihero-btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.6);
+}
+
+.apihero-btn-secondary {
+  padding: 18px 30px;
+
+  color: white;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+}
+
+.apihero-btn-secondary:hover {
+  border-color: #8b5cf6;
+  transform: translateY(-4px);
+}
+
+/* ====================================
+   FEATURES
+==================================== */
+
+.apihero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.apihero-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.apihero-feature svg {
+  font-size: 28px;
+  color: #8b5cf6;
+  margin-bottom: 12px;
+
+  transition: 0.4s;
+}
+
+.apihero-feature span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.apihero-feature:hover svg {
+  transform: translateY(-5px);
+  color: #a855f7;
+}
+
+/* ====================================
+   RESPONSIVE
+==================================== */
+
+@media (max-width: 992px) {
+
+  .apihero-left h1 {
+    font-size: 3.5rem;
+  }
+
+  .apihero-features {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .apihero-container {
+    width: 92%;
+  }
+
+  .apihero-left h1 {
+    font-size: 2.8rem;
+  }
+
+  .apihero-left p {
+    font-size: 1rem;
+  }
+
+  .apihero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .apihero-btn-primary,
+  .apihero-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .apihero-features {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .apihero-left h1 {
+    font-size: 2.2rem;
+  }
+
+  .apihero-left h1 .apihero-heading-main,
+  .apihero-left h1 .apihero-heading-accent {
+    word-break: keep-all;
+  }
+
+  .apihero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Consistent service hero sizing */
+.apihero-section,
+.apihero-container {
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+.apihero-container {
+  padding: clamp(90px, 12vh, 120px) 0 clamp(36px, 7vh, 70px);
+}
+
+.apihero-tag {
+  margin-bottom: clamp(18px, 4vh, 40px);
+  font-size: 0.875rem;
+}
+
+.apihero-left h1 {
+  font-size: clamp(2.35rem, 5vw, 4.5rem);
+  line-height: 1.12;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12em;
+  overflow: visible;
+}
+
+.apihero-left h1 .apihero-heading-main,
+.apihero-left h1 .apihero-heading-accent {
+  font-size: inherit;
+}
+
+.apihero-left p {
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.75;
+  margin-bottom: clamp(24px, 4vh, 36px);
+}
+
+.apihero-buttons {
+  margin-bottom: clamp(28px, 5vh, 46px);
+}
+
+.apihero-features {
+  gap: clamp(18px, 3vw, 32px);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .apihero-container {
+    min-height: 100svh;
+    padding: 82px 0 40px;
+  }
+}

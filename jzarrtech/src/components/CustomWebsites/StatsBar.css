@@ -1,0 +1,284 @@
+/* ==========================
+   JZARR TRUST STATS
+========================== */
+
+.jt-stats-section {
+  padding: 100px 20px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.05),
+      transparent 60%
+    ),
+    #020b2d;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.jt-stats-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.jt-stats-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.jt-stats-header h2 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.jt-stats-header span {
+  background: linear-gradient(
+    135deg,
+    #ff7b00,
+    #ffb703
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.jt-line {
+  width: 90px;
+  height: 4px;
+
+  margin: 18px auto 0;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #ff7b00,
+    #ffb703
+  );
+}
+
+/* GRID */
+
+.jt-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+
+.jt-stat-card {
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 24px;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  transition: all 0.4s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.jt-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 220px;
+  height: 220px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.08),
+    transparent 70%
+  );
+
+  opacity: 0;
+
+  transition: 0.4s;
+}
+
+.jt-stat-card:hover::before {
+  opacity: 1;
+}
+
+.jt-stat-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ==========================
+   ICONS
+========================== */
+
+.jt-stat-icon {
+  width: 85px;
+  height: 85px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+  color: white;
+
+  transition: all 0.4s ease;
+}
+
+/* CARD 1 */
+
+.jt-stat-card:nth-child(1) .jt-stat-icon {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  box-shadow:
+    0 15px 35px rgba(37,99,235,.25);
+}
+
+/* CARD 2 */
+
+.jt-stat-card:nth-child(2) .jt-stat-icon {
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7
+  );
+
+  box-shadow:
+    0 15px 35px rgba(124,58,237,.25);
+}
+
+/* CARD 3 */
+
+.jt-stat-card:nth-child(3) .jt-stat-icon {
+  background: linear-gradient(
+    135deg,
+    #ff7b00,
+    #ffb703
+  );
+
+  box-shadow:
+    0 15px 35px rgba(255,123,0,.25);
+}
+
+/* CARD 4 */
+
+.jt-stat-card:nth-child(4) .jt-stat-icon {
+  background: linear-gradient(
+    135deg,
+    #10b981,
+    #22c55e
+  );
+
+  box-shadow:
+    0 15px 35px rgba(16,185,129,.25);
+}
+
+/* ICON HOVER */
+
+.jt-stat-card:hover .jt-stat-icon {
+  transform: scale(1.12) rotate(8deg);
+}
+
+/* ==========================
+   NUMBERS
+========================== */
+
+.jt-stat-card h3 {
+  font-size: 42px;
+  font-weight: 800;
+
+  color: white;
+
+  margin-bottom: 10px;
+
+  transition: all 0.4s ease;
+}
+
+.jt-stat-card:nth-child(1):hover h3 {
+  color: #06b6d4;
+}
+
+.jt-stat-card:nth-child(2):hover h3 {
+  color: #a855f7;
+}
+
+.jt-stat-card:nth-child(3):hover h3 {
+  color: #ffb703;
+}
+
+.jt-stat-card:nth-child(4):hover h3 {
+  color: #22c55e;
+}
+
+/* TEXT */
+
+.jt-stat-card p {
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
+/* DIFFERENT CARD GLOWS */
+
+.jt-stat-card:nth-child(1):hover {
+  border-color: #2563eb;
+  box-shadow:
+    0 20px 50px rgba(37,99,235,.15);
+}
+
+.jt-stat-card:nth-child(2):hover {
+  border-color: #7c3aed;
+  box-shadow:
+    0 20px 50px rgba(124,58,237,.15);
+}
+
+.jt-stat-card:nth-child(3):hover {
+  border-color: #ff7b00;
+  box-shadow:
+    0 20px 50px rgba(255,123,0,.15);
+}
+
+.jt-stat-card:nth-child(4):hover {
+  border-color: #10b981;
+  box-shadow:
+    0 20px 50px rgba(16,185,129,.15);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .jt-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .jt-stats-header h2 {
+    font-size: 34px;
+  }
+
+  .jt-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

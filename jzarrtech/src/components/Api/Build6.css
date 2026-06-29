@@ -1,0 +1,249 @@
+/* ===================================
+   BUILD 6 CTA SECTION
+=================================== */
+
+.build6-section {
+  padding: 20px 7%;
+  background: #ffffff;
+}
+
+.build6-container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 45px 50px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5 0%,
+      #6d28d9 50%,
+      #7c3aed 100%
+    );
+
+  box-shadow:
+    0 30px 80px rgba(124,58,237,.25);
+}
+
+/* Glow */
+
+.build6-container::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border-radius: 50%;
+
+  top: -180px;
+  left: -120px;
+
+  z-index: 0;
+}
+
+.build6-container::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border-radius: 50%;
+
+  right: -120px;
+  bottom: -150px;
+
+  z-index: 0;
+}
+
+/* ===================================
+   ICON
+=================================== */
+
+.build6-icon-wrap,
+.build6-content,
+.build6-btn-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.build6-icon {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 55px;
+
+  color: white;
+
+  background:
+    rgba(255,255,255,.12);
+
+  backdrop-filter: blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.15);
+
+  animation: build6Float 4s ease-in-out infinite;
+}
+
+/* ===================================
+   CONTENT
+=================================== */
+
+.build6-content {
+  flex: 1;
+  text-align: center;
+}
+
+.build6-content span {
+  display: inline-block;
+
+  color: rgba(255,255,255,.75);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 15px;
+}
+
+.build6-content h2 {
+  color: white;
+
+  font-size: 2.7rem;
+  font-weight: 800;
+
+  margin-bottom: 15px;
+}
+
+.build6-content p {
+  color: rgba(255,255,255,.85);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  max-width: 650px;
+  margin: auto;
+}
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.build6-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 20px 32px;
+
+  border-radius: 16px;
+
+  text-decoration: none;
+
+  background: white;
+  color: #6d28d9;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  transition: .4s ease;
+
+  box-shadow:
+    0 15px 40px rgba(255,255,255,.25);
+}
+
+.build6-btn:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 50px rgba(255,255,255,.35);
+}
+
+/* ===================================
+   ANIMATION
+=================================== */
+
+@keyframes build6Float {
+
+  0%,100%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:1100px){
+
+  .build6-container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .build6-content h2{
+    font-size: 2.2rem;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .build6-section{
+    padding: 80px 6%;
+  }
+
+  .build6-container{
+    padding: 40px 25px;
+  }
+
+  .build6-content h2{
+    font-size: 1.8rem;
+  }
+
+  .build6-icon{
+    width: 95px;
+    height: 95px;
+    font-size: 42px;
+  }
+
+  .build6-btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+}

@@ -1,0 +1,167 @@
+/* ==========================
+   RECENT PROJECTS
+========================== */
+
+.cw-projects-section {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.cw-projects-container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.cw-projects-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.cw-projects-header h2 {
+  font-size: 56px;
+  font-weight: 800;
+  color: #000;
+}
+
+.cw-projects-line {
+  width: 90px;
+  height: 5px;
+
+  margin: 18px auto 24px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #ff7b00,
+    #ffb703
+  );
+}
+
+.cw-projects-header p {
+  color: #64748b;
+  font-size: 18px;
+}
+
+/* GRID */
+
+.cw-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+
+.cw-project-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 10px 25px rgba(15,23,42,.05);
+}
+
+.cw-project-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.08);
+}
+
+/* IMAGE */
+
+.cw-project-image {
+  height: 240px;
+  overflow: hidden;
+}
+
+.cw-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: .6s ease;
+}
+
+.cw-project-card:hover img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+
+.cw-project-content {
+  padding: 25px;
+}
+
+.cw-project-content h3 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 12px;
+
+  transition: .3s;
+}
+
+.cw-project-card:hover h3 {
+  color: #ff7b00;
+}
+
+.cw-project-content p {
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+/* TAGS */
+
+.cw-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cw-project-tags span {
+  padding: 8px 14px;
+
+  border-radius: 50px;
+
+  background: #fff7ed;
+
+  color: #ff7b00;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .cw-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cw-projects-header h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cw-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cw-projects-header h2 {
+    font-size: 34px;
+  }
+
+  .cw-projects-header p {
+    font-size: 16px;
+  }
+}

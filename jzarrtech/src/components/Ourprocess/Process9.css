@@ -1,0 +1,255 @@
+/* =========================
+   PROCESS 9 PREMIUM
+========================= */
+
+.process9 {
+  padding: 40px 6%;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BG Glow */
+
+.process9::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.08);
+  filter: blur(120px);
+}
+
+.process9::after {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.08);
+  filter: blur(120px);
+}
+
+/* Header */
+
+.process9-header {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.process9-header span {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.process9-header h2 {
+  font-size: 3rem;
+  color: #0f172a;
+  margin: 20px 0;
+  font-weight: 800;
+}
+
+.process9-header p {
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Timeline */
+
+.process9-timeline {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.process9-timeline::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #2563eb,
+    #8b5cf6,
+    #06b6d4,
+    #10b981,
+    #f59e0b
+  );
+}
+
+/* Item */
+
+.process9-item {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Number */
+
+.process9-number {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #2563eb;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08),
+    inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+/* Card */
+
+.process9-card {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 28px;
+
+  background: rgba(255,255,255,.75);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255,255,255,.8);
+
+  box-shadow:
+    0 10px 40px rgba(15,23,42,.08);
+
+  transition: .4s ease;
+}
+
+.process9-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 25px 60px rgba(15,23,42,.15);
+}
+
+/* Icon */
+
+.process9-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  color: white;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+/* Different Gradient For Every Process */
+
+.process9-item:nth-child(1) .process9-icon {
+  background: linear-gradient(135deg,#2563eb,#60a5fa);
+}
+
+.process9-item:nth-child(2) .process9-icon {
+  background: linear-gradient(135deg,#8b5cf6,#c084fc);
+}
+
+.process9-item:nth-child(3) .process9-icon {
+  background: linear-gradient(135deg,#06b6d4,#67e8f9);
+}
+
+.process9-item:nth-child(4) .process9-icon {
+  background: linear-gradient(135deg,#10b981,#34d399);
+}
+
+.process9-item:nth-child(5) .process9-icon {
+  background: linear-gradient(135deg,#f59e0b,#fbbf24);
+}
+
+/* Hover Border Gradient */
+
+.process9-item:nth-child(1) .process9-card:hover {
+  border-color: #2563eb50;
+}
+
+.process9-item:nth-child(2) .process9-card:hover {
+  border-color: #8b5cf650;
+}
+
+.process9-item:nth-child(3) .process9-card:hover {
+  border-color: #06b6d450;
+}
+
+.process9-item:nth-child(4) .process9-card:hover {
+  border-color: #10b98150;
+}
+
+.process9-item:nth-child(5) .process9-card:hover {
+  border-color: #f59e0b50;
+}
+
+/* Content */
+
+.process9-content h3 {
+  font-size: 1.55rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.process9-content p {
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .process9-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .process9-item {
+    gap: 20px;
+  }
+
+  .process9-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .process9-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 1.7rem;
+  }
+}

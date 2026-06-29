@@ -1,0 +1,310 @@
+.comparison-section {
+  padding: 40px 20px 48px;
+  background: #f8fafc;
+}
+
+.comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+
+.comparison-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+
+  padding: 28px 30px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  font-weight: 700;
+}
+
+.comparison-header .feature-title {
+   text-align: left;
+  color: #090b0e;
+  font-size: 18px;
+  
+  letter-spacing: 1px;
+}
+
+.comparison-header .brand {
+  text-align: left;
+  color: #2563eb;
+  font-size: 18px;
+}
+
+.comparison-header .agency {
+  text-align: left;
+  color: #020c1a;
+  font-size: 18px;
+}
+
+/* Rows */
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+
+  align-items: center;
+
+  padding: 30px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  transition: all 0.3s ease;
+}
+
+.comparison-row:hover {
+  background: #f8fafc;
+}
+
+.comparison-row:last-child {
+  border-bottom: none;
+}
+
+.feature-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.good,
+.bad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.good {
+  color: #0f172a;
+}
+
+.bad {
+  color: #64748b;
+}
+
+/* Icons */
+
+.check-icon {
+  color: #2563eb;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cross-icon {
+  color: #cbd5e1;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Bottom CTA */
+
+.comparison-cta {
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 32px 36px;
+}
+
+.comparison-cta h3 {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.comparison-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  text-decoration: none;
+
+  background: #ff9800;
+  color: white;
+
+  padding: 16px 30px;
+
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.comparison-cta a:hover {
+  transform: translateY(-2px);
+  background: #ff8c00;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .comparison-container {
+    max-width: 100%;
+  }
+
+  .feature-name {
+    font-size: 18px;
+  }
+
+  .good,
+  .bad {
+    font-size: 15px;
+  }
+
+  .comparison-cta h3 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .comparison-section {
+    padding: 32px 10px 40px;
+  }
+
+  .comparison-container {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  }
+
+  .comparison-header {
+    display: grid;
+    grid-template-columns: 0.95fr 1fr 1fr;
+    gap: 8px;
+    padding: 16px 12px;
+    text-align: left;
+  }
+
+  .comparison-header .feature-title,
+  .comparison-header .brand,
+  .comparison-header .agency {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 0.95fr 1fr 1fr;
+    gap: 8px;
+    align-items: start;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px 12px;
+    margin-bottom: 0;
+
+    text-align: left;
+
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .comparison-row:last-child {
+    border-bottom: none;
+  }
+
+  .feature-name {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: 11px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .good,
+  .bad {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+    border-radius: 0;
+
+    font-size: 10px;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .good {
+    margin-bottom: 0;
+    background: transparent;
+  }
+
+  .bad {
+    background: transparent;
+  }
+
+  .good::before,
+  .bad::before {
+    content: none;
+  }
+
+  .good span,
+  .bad span {
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .check-icon,
+  .cross-icon {
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .comparison-cta {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+    padding: 24px;
+    margin-top: 16px;
+    border-radius: 18px;
+  }
+
+  .comparison-cta h3 {
+    font-size: 22px;
+  }
+
+  .comparison-cta a {
+    width: 100%;
+    max-width: 280px;
+  }
+}

@@ -1,0 +1,180 @@
+.why-choose {
+  padding: -120px 8%;
+  background: #f8fafc;
+}
+
+.why-container {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Image */
+
+.why-image-wrapper {
+  position: relative;
+}
+
+.why-image {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+
+  transition: 0.5s ease;
+}
+
+.why-image:hover {
+  transform: scale(1.03);
+}
+
+/* Floating Card */
+
+.uptime-card {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+
+  background: white;
+  border-radius: 18px;
+
+  padding: 22px 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.uptime-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dcfce7;
+  color: #16a34a;
+
+  font-size: 24px;
+}
+
+.uptime-card h3 {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.uptime-card p {
+  color: #64748b;
+}
+
+/* Content */
+
+.why-content h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.why-content p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+/* Benefits */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #334155;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.benefit-item svg {
+  color: #2563eb;
+  font-size: 20px;
+}
+
+.benefit-item:hover {
+  transform: translateX(8px);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .why-container {
+    grid-template-columns: 1fr;
+  }
+
+  .why-content {
+    text-align: center;
+  }
+
+  .benefits-grid {
+    text-align: left;
+  }
+
+  .uptime-card {
+    right: 20px;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .why-choose {
+    padding: 80px 5%;
+  }
+
+  .why-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uptime-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 20px;
+  }
+}

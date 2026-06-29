@@ -1,0 +1,214 @@
+/* ==========================
+   FAQ + CONSULTATION
+========================== */
+
+.cw-faq-section {
+  padding: 20px 20px;
+  background: #ffffff;
+}
+
+.cw-faq-container {
+  max-width: 1350px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ==========================
+   LEFT SIDE
+========================== */
+
+.cw-faq-left h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 35px;
+}
+
+.cw-faq-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  transition: all .35s ease;
+}
+
+.cw-faq-item:hover {
+  border-color: #ff7b00;
+}
+
+.cw-faq-question {
+  width: 100%;
+  padding: 22px 25px;
+
+  background: transparent;
+  border: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+.cw-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s ease;
+}
+
+.cw-faq-item.active .cw-faq-answer {
+  max-height: 200px;
+}
+
+.cw-faq-answer p {
+  padding: 0 25px 25px;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+/* ==========================
+   RIGHT SIDE
+========================== */
+
+.cw-consultation-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 55px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020b2d,
+      #04184d
+    );
+
+  color: white;
+
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cw-glow {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  top: -150px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37,99,235,.35),
+      transparent 70%
+    );
+}
+
+.cw-consultation-card h3 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.cw-consultation-card h3 span {
+  color: #ffb703;
+}
+
+.cw-consultation-card p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 35px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.cw-consultation-link {
+  width: fit-content;
+
+  padding: 16px 30px;
+
+  border: none;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7b00,
+      #ffb703
+    );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: .35s ease;
+
+  position: relative;
+  z-index: 2;
+}
+
+.cw-consultation-link:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px rgba(255,123,0,.25);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+  .cw-faq-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cw-consultation-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cw-faq-left h2 {
+    font-size: 34px;
+  }
+
+  .cw-consultation-card {
+    padding: 35px;
+  }
+
+  .cw-consultation-card h3 {
+    font-size: 30px;
+  }
+}

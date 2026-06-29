@@ -1,0 +1,211 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.global-map-section {
+  background: #f8fafc;
+  padding: 40px 20px 80px;
+  overflow: hidden;
+}
+
+.global-map {
+  position: relative;
+  width: 100%;
+  max-width: 950px;   /* 1100px se kam */
+  height: 450px;      /* 550px se kam */
+  margin: 0 auto;
+
+  border-radius: 30px;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* cover ki jagah contain */
+  display: block;
+  background: #ffffff;
+}
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   LOCATION DOTS
+========================= */
+
+.location-dot {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  background: #ff9800;
+
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  z-index: 10;
+
+  animation: pulse 2s infinite;
+}
+
+.location-dot::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 6px;
+  height: 6px;
+
+  background: #ffffff;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* =========================
+   GLOW ANIMATION
+========================= */
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 18px rgba(255, 152, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+  }
+}
+
+/* =========================
+   TOOLTIP
+========================= */
+
+.tooltip {
+  position: absolute;
+
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #07122f;
+  color: white;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.3s ease;
+}
+
+.location-dot:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================
+   STATS CARD
+========================= */
+
+.map-stats {
+  position: absolute;
+
+  right: 30px;
+  bottom: 30px;
+
+  background: #ffffff;
+
+  border-radius: 50px;
+
+  padding: 14px 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  z-index: 20;
+}
+
+.orange-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #ff9800;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+
+  background: #d1d5db;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .global-map {
+    height: 450px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .global-map {
+    height: 320px;
+    border-radius: 20px;
+  }
+
+  .location-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .location-dot::after {
+    width: 4px;
+    height: 4px;
+  }
+
+  .map-stats {
+    right: 10px;
+    bottom: 10px;
+
+    padding: 10px 14px;
+    font-size: 12px;
+    gap: 10px;
+  }
+}

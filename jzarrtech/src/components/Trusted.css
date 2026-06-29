@@ -1,0 +1,220 @@
+.trusted {
+  position: relative;
+  padding: 40px 0;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fbff
+  );
+  overflow: hidden;
+}
+
+/* Background Glow */
+.trusted::before {
+  content: "";
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -250px;
+  left: -250px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    rgba(37, 99, 235, 0.08),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.trusted::after {
+  content: "";
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  bottom: -250px;
+  right: -250px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    rgba(99, 102, 241, 0.08),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+/* Top Text */
+
+.trusted-text {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #64748b;
+
+  margin-bottom: 45px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Slider */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Left Fade */
+
+.slider::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 180px;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    transparent
+  );
+
+  z-index: 5;
+}
+
+/* Right Fade */
+
+.slider::after {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 180px;
+  height: 100%;
+
+  background: linear-gradient(
+    270deg,
+    #ffffff,
+    transparent
+  );
+
+  z-index: 5;
+}
+
+/* Track */
+
+.slide-track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  width: max-content;
+
+  animation: scroll 25s linear infinite;
+}
+
+/* Pause on hover */
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+/* Company Cards */
+
+.slide-track span {
+  min-width: 220px;
+
+  padding: 18px 28px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.8);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 8px 25px rgba(15,23,42,.05);
+
+  font-size: 22px;
+  font-weight: 800;
+
+  color: #64748b;
+
+  transition: all .35s ease;
+}
+
+/* Hover Effect */
+
+.slide-track span:hover {
+  transform:
+    translateY(-6px)
+    scale(1.04);
+
+  color: #2563eb;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 20px 40px rgba(37,99,235,.12);
+}
+
+/* Infinite Scroll */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .trusted {
+    padding: 60px 0;
+  }
+
+  .trusted-text {
+    font-size: 11px;
+    margin-bottom: 30px;
+  }
+
+  .slide-track {
+    gap: 18px;
+  }
+
+  .slide-track span {
+    min-width: 160px;
+
+    padding: 14px 20px;
+
+    font-size: 18px;
+  }
+
+  .slider::before,
+  .slider::after {
+    width: 60px;
+  }
+}

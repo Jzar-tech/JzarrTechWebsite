@@ -1,0 +1,358 @@
+.testimonials {
+  background: #f8fafc;
+  padding: 30px 0 100px;
+  overflow: hidden;
+}
+
+.review-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 22px auto 0;
+
+  padding: 14px 30px;
+
+  background: #ff9800;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+
+  text-decoration: none;
+
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 10px 25px rgba(255, 152, 0, 0.25);
+}
+
+.review-btn:hover {
+  background: #ff8c00;
+  transform: translateY(-2px);
+}
+
+.testimonials {
+  text-align: center;
+}
+
+/* Heading Stars */
+
+.heading-stars {
+  color: #ff8c00;
+  font-size: 20px;
+  margin-bottom: 18px;
+
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.testimonials h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #07122f;
+  text-align: center;
+
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+.testimonials .subtitle {
+  margin-top: 15px;
+
+  color: #64748b;
+  font-size: 16px;
+
+  text-align: center !important;
+
+  max-width: 650px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+}
+/* Slider */
+
+.testimonial-slider {
+  margin-top: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollLeft 35s linear infinite;
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Cards */
+
+.testimonial-card {
+  width: 380px;
+  min-height: 250px;
+
+  background: #ffffff;
+  border-radius: 24px;
+
+  padding: 25px;
+  position: relative;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  flex-shrink: 0;
+}
+
+/* Card Stars */
+
+.card-stars {
+  display: flex;
+  gap: 4px;
+  color: #ff8c00;
+  margin-bottom: 18px;
+}
+
+/* Quote Icon */
+
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  font-size: 42px;
+  color: #dbeafe;
+}
+
+/* Review */
+
+.review {
+  color: #334155;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Client */
+
+.client {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ff9800, #f97316);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.client h4 {
+  color: #0f172a;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.client span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.review-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999;
+}
+
+.review-modal {
+  width: min(100%, 560px);
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.22);
+}
+
+.review-modal h3 {
+  margin: 0;
+  font-size: 30px;
+  color: #07122f;
+}
+
+.review-modal-subtitle {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.review-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.review-modal-close:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg);
+}
+
+.review-form {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.review-form label {
+  display: grid;
+  gap: 8px;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.15);
+}
+
+.review-submit-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 15px 24px;
+  background: linear-gradient(135deg, #ff9800, #f97316);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.28);
+}
+
+.review-submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 60px 0;
+  }
+
+  .testimonials h2 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .testimonial-card {
+    width: 300px;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .review {
+    font-size: 14px;
+  }
+
+  .client h4 {
+    font-size: 16px;
+  }
+
+  .client span {
+    font-size: 12px;
+  }
+
+  .review-modal {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .review-modal h3 {
+    font-size: 24px;
+    padding-right: 36px;
+  }
+
+  .review-modal-close {
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    right: 12px;
+  }
+}

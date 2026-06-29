@@ -1,0 +1,186 @@
+.build4-section {
+  padding: -100px ;
+  background: #ffffff;
+}
+
+.build4-container {
+  max-width: 1300px;
+  margin: auto;
+
+  padding: 50px 60px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #7c3aed,
+      #2563eb
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 60px rgba(124,58,237,.25);
+}
+
+/* Glow Effect */
+
+.build4-container::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.15),
+      transparent 70%
+    );
+
+  top: -150px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.build4-icon-box {
+  width: 110px;
+  height: 110px;
+
+  min-width: 110px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(15px);
+
+  font-size: 48px;
+  color: white;
+}
+
+.build4-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.build4-content span {
+  display: block;
+
+  color: rgba(255,255,255,.75);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.build4-content h2 {
+  color: white;
+
+  font-size: 48px;
+  font-weight: 800;
+
+  margin-bottom: 15px;
+}
+
+.build4-content p {
+  color: rgba(255,255,255,.9);
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  max-width: 650px;
+}
+
+.build4-btn {
+  height: 60px;
+
+  padding: 0 35px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: white;
+
+  color: #4f46e5;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: .4s;
+
+  min-width: 220px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.build4-btn:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 35px rgba(255,255,255,.25);
+}
+
+@media (max-width: 992px) {
+
+  .build4-container {
+    flex-direction: column;
+    text-align: center;
+
+    padding: 50px 30px;
+  }
+
+  .build4-content h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .build4-content h2 {
+    font-size: 30px;
+  }
+
+  .build4-btn {
+    width: 100%;
+  }
+
+  .build4-icon-box {
+    width: 90px;
+    height: 90px;
+
+    font-size: 40px;
+  }
+}

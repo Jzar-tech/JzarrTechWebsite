@@ -1,0 +1,195 @@
+/* =========================
+   BUILD CTA
+========================= */
+
+.build8 {
+  padding: 60px 6%;
+  background: #ffffff;
+}
+
+.build8-container {
+  position: relative;
+
+  max-width: 1400px;
+  margin: auto;
+
+  background: linear-gradient(
+    135deg,
+    #08275f,
+    #041b48,
+    #02122f
+  );
+
+  border-radius: 24px;
+
+  padding: 55px 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+}
+
+/* LEFT */
+
+.build8-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  z-index: 2;
+}
+
+.build8-icon {
+  width: 90px;
+  height: 90px;
+
+  border: 2px solid rgba(255,255,255,.4);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 34px;
+
+  flex-shrink: 0;
+}
+
+.build8-left h2 {
+  color: white;
+
+  font-size: 3rem;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.build8-left span {
+  color: #3b82f6;
+}
+
+/* RIGHT */
+
+.build8-right {
+  max-width: 420px;
+  z-index: 2;
+}
+
+.build8-right p {
+  color: rgba(255,255,255,.85);
+
+  line-height: 1.9;
+  font-size: 16px;
+
+  margin-bottom: 25px;
+}
+
+/* BUTTON */
+
+.build8-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  background: white;
+  color: #08275f;
+
+  text-decoration: none;
+
+  padding: 15px 28px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: .4s ease;
+}
+
+.build8-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(255,255,255,.15);
+}
+
+/* DECORATION */
+
+.build8-dots-left,
+.build8-dots-right {
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  opacity: .35;
+
+  background-image:
+    radial-gradient(
+      #3b82f6 2px,
+      transparent 2px
+    );
+
+  background-size: 14px 14px;
+}
+
+.build8-dots-left {
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.build8-dots-right {
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+
+  .build8-container {
+    flex-direction: column;
+    text-align: center;
+
+    padding: 50px 35px;
+  }
+
+  .build8-left {
+    flex-direction: column;
+  }
+
+  .build8-left h2 {
+    font-size: 2.2rem;
+  }
+
+  .build8-right {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .build8 {
+    padding: 70px 5%;
+  }
+
+  .build8-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .build8-icon {
+    width: 75px;
+    height: 75px;
+
+    font-size: 28px;
+  }
+}

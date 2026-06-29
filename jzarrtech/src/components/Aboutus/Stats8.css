@@ -1,0 +1,142 @@
+/* ==========================
+   STATS SECTION
+========================== */
+
+.stats8 {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #08275f,
+    #03193f,
+    #02112e
+  );
+
+  padding: 80px 6%;
+}
+
+/* Background Lines */
+
+.stats8::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at left,
+      rgba(255,255,255,.08),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
+
+.stats8-container {
+  max-width: 1400px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 0;
+}
+
+/* CARD */
+
+.stats8-card {
+  text-align: center;
+  color: #fff;
+
+  padding: 10px 35px;
+
+  position: relative;
+
+  transition: 0.4s ease;
+}
+
+.stats8-card:hover {
+  transform: translateY(-8px);
+}
+
+.stats8-card:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  top: 10%;
+  right: 0;
+
+  width: 1px;
+  height: 80%;
+
+  background: rgba(255,255,255,.25);
+}
+
+/* ICON */
+
+.stats8-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+
+  color: #ffffff;
+}
+
+/* NUMBER */
+
+.stats8-card h2 {
+  font-size: 3rem;
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+
+.stats8-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+/* DESC */
+
+.stats8-card p {
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: rgba(255,255,255,.8);
+
+  max-width: 220px;
+  margin: auto;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+
+  .stats8-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .stats8-card::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .stats8-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stats8-card h2 {
+    font-size: 2.5rem;
+  }
+
+  .stats8 {
+    padding: 70px 5%;
+  }
+}

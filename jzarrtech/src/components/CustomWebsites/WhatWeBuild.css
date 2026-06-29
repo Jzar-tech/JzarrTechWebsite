@@ -1,0 +1,326 @@
+/* =========================
+   WHAT WE BUILD
+========================= */
+
+.wb-section {
+  padding: 40px 20px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.wb-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.wb-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.wb-header h2 {
+  font-size: 54px;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.1;
+}
+
+.wb-header h2 span {
+  color: #000000;
+}
+
+.wb-line {
+  width: 90px;
+  height: 5px;
+  margin: 18px auto 24px;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #ff7b00,
+    #ffb703
+  );
+}
+
+.wb-header p {
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.wb-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.wb-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+
+  padding: 35px 20px;
+
+  text-align: center;
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.04);
+}
+
+.wb-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 220px;
+  height: 220px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 123, 0, 0.08),
+    transparent 70%
+  );
+
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.wb-card:hover::before {
+  opacity: 1;
+}
+
+.wb-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.wb-icon {
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  color: #ffffff;
+  font-size: 38px;
+
+  transition: all 0.4s ease;
+}
+
+/* Card 1 */
+
+.wb-card:nth-child(1) .wb-icon {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  box-shadow:
+    0 15px 30px rgba(37, 99, 235, 0.25);
+}
+
+/* Card 2 */
+
+.wb-card:nth-child(2) .wb-icon {
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #a855f7
+  );
+
+  box-shadow:
+    0 15px 30px rgba(124, 58, 237, 0.25);
+}
+
+/* Card 3 */
+
+.wb-card:nth-child(3) .wb-icon {
+  background: linear-gradient(
+    135deg,
+    #ff7b00,
+    #ffb703
+  );
+
+  box-shadow:
+    0 15px 30px rgba(255, 123, 0, 0.25);
+}
+
+/* Card 4 */
+
+.wb-card:nth-child(4) .wb-icon {
+  background: linear-gradient(
+    135deg,
+    #10b981,
+    #22c55e
+  );
+
+  box-shadow:
+    0 15px 30px rgba(16, 185, 129, 0.25);
+}
+
+/* Card 5 */
+
+.wb-card:nth-child(5) .wb-icon {
+  background: linear-gradient(
+    135deg,
+    #ec4899,
+    #f43f5e
+  );
+
+  box-shadow:
+    0 15px 30px rgba(236, 72, 153, 0.25);
+}
+
+/* Card 6 */
+
+.wb-card:nth-child(6) .wb-icon {
+  background: linear-gradient(
+    135deg,
+    #0ea5e9,
+    #2563eb
+  );
+
+  box-shadow:
+    0 15px 30px rgba(14, 165, 233, 0.25);
+}
+
+/* Icon Hover */
+
+.wb-card:hover .wb-icon {
+  transform: scale(1.1) rotate(8deg);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.wb-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.5;
+  transition: all 0.35s ease;
+}
+
+/* Different Title Colors */
+
+.wb-card:nth-child(1):hover h3 {
+  color: #2563eb;
+}
+
+.wb-card:nth-child(2):hover h3 {
+  color: #7c3aed;
+}
+
+.wb-card:nth-child(3):hover h3 {
+  color: #ff7b00;
+}
+
+.wb-card:nth-child(4):hover h3 {
+  color: #10b981;
+}
+
+.wb-card:nth-child(5):hover h3 {
+  color: #ec4899;
+}
+
+.wb-card:nth-child(6):hover h3 {
+  color: #0ea5e9;
+}
+
+/* Different Border Colors */
+
+.wb-card:nth-child(1):hover {
+  border-color: #2563eb;
+}
+
+.wb-card:nth-child(2):hover {
+  border-color: #7c3aed;
+}
+
+.wb-card:nth-child(3):hover {
+  border-color: #ff7b00;
+}
+
+.wb-card:nth-child(4):hover {
+  border-color: #10b981;
+}
+
+.wb-card:nth-child(5):hover {
+  border-color: #ec4899;
+}
+
+.wb-card:nth-child(6):hover {
+  border-color: #0ea5e9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .wb-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wb-header h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wb-header h2 {
+    font-size: 34px;
+  }
+
+  .wb-header p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .wb-grid {
+    grid-template-columns: 1fr;
+  }
+}

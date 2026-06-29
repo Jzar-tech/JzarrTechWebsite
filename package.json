@@ -1,0 +1,15 @@
+{
+  "name": "jzarrtech-main-project",
+  "private": true,
+  "workspaces": [
+    "jzarrtech",
+    "jzarrtechserver"
+  ],
+  "scripts": {
+    "client": "npm start --workspace jzarrtech",
+    "server": "npm start --workspace jzarrtechserver",
+    "build": "npm run build --workspace jzarrtech",
+    "test": "npm test --workspace jzarrtech",
+    "install:all": "npm install --workspaces"
+  }
+}
