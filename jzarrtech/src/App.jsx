@@ -16,6 +16,10 @@ import Api from "./pages/Api";
 import Graphics from "./pages/Graphics";
 import Aboutus from "./pages/Aboutus";
 import Ourprocess from "./pages/Ourprocess";
+import Landingpage from "./pages/Landingpage";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Disclaimer from "./pages/Disclaimer";
 
 
 
@@ -47,6 +51,10 @@ function App() {
           <Route path="/Graphics" element={<Graphics />} />
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path="/Ourprocess" element={<Ourprocess />} />
+          <Route path="/IT-Services" element={<Landingpage />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
          
 
 

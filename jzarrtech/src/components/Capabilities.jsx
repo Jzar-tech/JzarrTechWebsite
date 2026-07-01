@@ -17,7 +17,13 @@ FiPenTool,
 
 import CapabilityCard from "./CapabilityCard";
 
-const Capabilities = () => {
+const Capabilities = ({
+  showHeading = true,
+  showWhy = true,
+  sectionId = "services",
+  className = "",
+  disableLinks = false,
+}) => {
 
 useEffect(() => {
 AOS.init({
@@ -79,23 +85,25 @@ link: "Graphics",
 },
 ];
 
-return ( <section id="services" className="capabilities"> <div className="capabilities-container">
+return ( <section id={sectionId} className={`capabilities ${className}`.trim()}> <div className="capabilities-container">
 
 
-    <div
-      className="capabilities-heading"
-      data-aos="fade-up"
-    >
-      <h2>
-        Capabilities Engineered
-        <br />
-        for <span>Market Leaders.</span>
-      </h2>
+    {showHeading && (
+      <div
+        className="capabilities-heading"
+        data-aos="fade-up"
+      >
+        <h2>
+          Capabilities Engineered
+          <br />
+          for <span>Market Leaders.</span>
+        </h2>
 
-      <p className="capabilities-subtitle">
-        We don't just build software. We craft unfair advantages.
-      </p>
-    </div>
+        <p className="capabilities-subtitle">
+          We don't just build software. We craft unfair advantages.
+        </p>
+      </div>
+    )}
 
     <div className="capabilities-grid">
       {data.map((item, index) => (
@@ -108,7 +116,7 @@ return ( <section id="services" className="capabilities"> <div className="capabi
             icon={item.icon}
             title={item.title}
             description={item.description}
-            link={item.link}
+            link={disableLinks ? "#" : item.link}
           />
         </div>
       ))}
@@ -139,21 +147,23 @@ return ( <section id="services" className="capabilities"> <div className="capabi
       </div>
     </div>
 
-    <div
-      className="why-section"
-      data-aos="fade-up"
-    >
-      <h2>
-        Why Elite Companies Choose
-        <br />
-        <span>Jzarr Tech</span>
-      </h2>
+    {showWhy && (
+      <div
+        className="why-section"
+        data-aos="fade-up"
+      >
+        <h2>
+          Why Elite Companies Choose
+          <br />
+          <span>Jzarr Tech</span>
+        </h2>
 
-      <p>
-        We don't operate like a traditional agency.
-        We operate like an extension of your elite internal team.
-      </p>
-    </div>
+        <p>
+          We don't operate like a traditional agency.
+          We operate like an extension of your elite internal team.
+        </p>
+      </div>
+    )}
 
   </div>
 </section>

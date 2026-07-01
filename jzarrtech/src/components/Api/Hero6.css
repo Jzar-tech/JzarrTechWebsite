@@ -4,7 +4,7 @@
 
 .apihero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100svh - 90px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -42,14 +42,14 @@
 
 .apihero-container {
   width: 90%;
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   z-index: 3;
 
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100svh - 90px);
 }
 
 /* ====================================
@@ -57,7 +57,7 @@
 ==================================== */
 
 .apihero-left {
-  max-width: 750px;
+  max-width: 680px;
 }
 
 .apihero-tag {
@@ -72,7 +72,7 @@
 }
 
 .apihero-left h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 1.05;
   font-weight: 800;
   color: #ffffff;
@@ -111,14 +111,13 @@
 }
 
 .apihero-left p {
-  max-width: 650px;
+  max-width: 600px;
 
   color: rgba(255, 255, 255, 0.8);
 
-  font-size: 1.15rem;
-  line-height: 1.9;
-
-  margin-bottom: 40px;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  margin-bottom: 28px;
 }
 
 /* ====================================
@@ -127,9 +126,9 @@
 
 .apihero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 70px;
+  margin-bottom: 34px;
 }
 
 .apihero-btn-primary,
@@ -150,7 +149,7 @@
 }
 
 .apihero-btn-primary {
-  padding: 18px 30px;
+  padding: 16px 26px;
 
   color: white;
 
@@ -171,7 +170,7 @@
 }
 
 .apihero-btn-secondary {
-  padding: 18px 30px;
+  padding: 16px 26px;
 
   color: white;
 
@@ -196,30 +195,30 @@
 .apihero-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 18px 28px;
+  margin-bottom: 0;
 }
 
 .apihero-feature {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  gap: 10px;
+  text-align: left;
 }
 
 .apihero-feature svg {
-  font-size: 28px;
+  font-size: 18px;
   color: #8b5cf6;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 
   transition: 0.4s;
 }
 
 .apihero-feature span {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .apihero-feature:hover svg {
@@ -293,25 +292,25 @@
 /* Consistent service hero sizing */
 .apihero-section,
 .apihero-container {
-  min-height: 100svh;
+  min-height: calc(100svh - 90px);
   box-sizing: border-box;
 }
 
 .apihero-container {
-  padding: clamp(90px, 12vh, 120px) 0 clamp(36px, 7vh, 70px);
+  padding: clamp(88px, 10vh, 104px) 0 clamp(24px, 4vh, 36px);
 }
 
 .apihero-tag {
-  margin-bottom: clamp(18px, 4vh, 40px);
-  font-size: 0.875rem;
+  margin-bottom: clamp(14px, 2.4vh, 24px);
+  font-size: 0.82rem;
 }
 
 .apihero-left h1 {
-  font-size: clamp(2.35rem, 5vw, 4.5rem);
-  line-height: 1.12;
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  line-height: 1.04;
   display: flex;
   flex-direction: column;
-  gap: 0.12em;
+  gap: 0.08em;
   overflow: visible;
 }
 
@@ -321,23 +320,31 @@
 }
 
 .apihero-left p {
-  font-size: clamp(1rem, 1.35vw, 1.125rem);
-  line-height: 1.75;
-  margin-bottom: clamp(24px, 4vh, 36px);
+  font-size: clamp(0.96rem, 1.05vw, 1.05rem);
+  line-height: 1.68;
+  margin-bottom: clamp(20px, 3vh, 28px);
 }
 
 .apihero-buttons {
-  margin-bottom: clamp(28px, 5vh, 46px);
+  margin-bottom: clamp(22px, 3vh, 32px);
 }
 
 .apihero-features {
-  gap: clamp(18px, 3vw, 32px);
+  gap: clamp(12px, 2vw, 22px);
   margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
   .apihero-container {
-    min-height: 100svh;
-    padding: 82px 0 40px;
+    min-height: auto;
+    padding: 78px 0 34px;
+  }
+
+  .apihero-section {
+    min-height: auto;
+  }
+
+  .apihero-features {
+    justify-content: flex-start;
   }
 }

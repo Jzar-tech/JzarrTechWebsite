@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import {
   FaCalendarAlt,
@@ -6,6 +7,8 @@ import {
   FaEnvelope,
   FaGlobe,
   FaLayerGroup,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
   FaVideo,
 } from "react-icons/fa";
 import Navbar from "../components/Navbar";
@@ -275,6 +278,18 @@ const ContactConsultation = () => {
                     required
                   ></textarea>
 
+                   <label className="terms-consent">
+                    <input type="checkbox" name="termsAccepted" required />
+                    <span>
+                      I agree to the{" "}
+                      <Link to="/terms-and-conditions">Terms and Conditions</Link>
+                      {", "}
+                      <Link to="/privacy-policy">Privacy Policy</Link>
+                      {" and "}
+                      <Link to="/disclaimer">Disclaimer</Link>
+                    </span>
+                  </label>
+
                   <button type="submit" className="contact-send-btn">
                     Send Request
                   </button>
@@ -286,6 +301,69 @@ const ContactConsultation = () => {
                     </p>
                   )}
                 </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-location-section">
+          <div className="contact-page-shell">
+            <div className="contact-location-grid">
+              <div className="contact-location-card">
+                <span className="contact-location-eyebrow">Visit Jzarr</span>
+                <h2>Jzarr Contact Information</h2>
+
+                <div className="contact-location-list">
+                  <div className="contact-location-item">
+                    <FaCalendarAlt />
+                    <div>
+                      <strong>Working Days</strong>
+                      <span>Monday - Saturday</span>
+                    </div>
+                  </div>
+
+                  <div className="contact-location-item">
+                    <FaClock />
+                    <div>
+                      <strong>Working Hours</strong>
+                      <span>12:00 PM - 9:00 PM PST</span>
+                    </div>
+                  </div>
+
+                  <div className="contact-location-item">
+                    <FaMapMarkerAlt />
+                    <div>
+                      <strong>Address</strong>
+                      <span>C, 10 Rashid Minhas Rd, Block 10-A Block 10 A Gulshan-e-Iqbal, Karachi, 75300, Pakistan</span>
+                    </div>
+                  </div>
+
+                  <div className="contact-location-item">
+                    <FaPhoneAlt />
+                    <div>
+                      <strong>Phone</strong>
+                      <span>(021) 36271630</span>
+                    </div>
+                  </div>
+
+                  <div className="contact-location-item">
+                    <FaEnvelope />
+                    <div>
+                      <strong>Email</strong>
+                      <span>hello@jzarrtech.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="contact-map-card">
+                <iframe
+                  title="JZARR location on Google Maps"
+                  src="https://www.google.com/maps?q=24.9058166,67.1111532&z=17&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>

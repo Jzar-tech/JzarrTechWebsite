@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import "./Testimonials.css";
 import { FaQuoteRight, FaStar, FaTimes } from "react-icons/fa";
 
-const defaultTestimonials = [
+export const defaultTestimonials = [
   {
     text: "I've worked with agencies all over the world, and Jzarr Tech operates on another level. Their UI/UX capabilities are simply Awwwards-worthy.",
     name: "David Smith",
@@ -35,20 +35,26 @@ const emptyForm = {
   text: "",
 };
 
-const Testimonials = () => {
+export function ReviewModalButton({
+  className = "",
+  onSubmitReview,
+  children = "Write a Review",
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [reviews, setReviews] = useState(defaultTestimonials);
   const [formData, setFormData] = useState(emptyForm);
 
   useEffect(() => {
-    document.body.style.overflow = isModalOpen ? "hidden" : "";
+    if (!isModalOpen) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
     };
   }, [isModalOpen]);
-
-  const sliderItems = useMemo(() => [...reviews, ...reviews], [reviews]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -72,79 +78,23 @@ const Testimonials = () => {
       return;
     }
 
-    setReviews((current) => [
-      ...current,
-      {
-        ...trimmedReview,
-        image: "",
-      },
-    ]);
+    onSubmitReview?.({
+      ...trimmedReview,
+      image: "",
+    });
     setFormData(emptyForm);
     setIsModalOpen(false);
   };
 
-  const getInitials = (name) =>
-    name
-      .split(" ")
-      .filter(Boolean)
-      .slice(0, 2)
-      .map((part) => part[0]?.toUpperCase())
-      .join("");
-
   return (
-    <section className="testimonials">
-      <div className="heading-stars">
-        {[...Array(5)].map((_, i) => (
-          <FaStar key={i} />
-        ))}
-      </div>
-
-      <h2>Don't just take our word for it.</h2>
-
-      <p className="subtitle">
-        Hear from the visionaries and market leaders we've partnered with.
-      </p>
-
+    <>
       <button
         type="button"
-        className="review-btn"
+        className={className}
         onClick={() => setIsModalOpen(true)}
       >
-        Write a Review <span aria-hidden="true">★</span>
+        {children}
       </button>
-
-      <div className="testimonial-slider">
-        <div className="slider-track">
-          {sliderItems.map((item, index) => (
-            <div className="testimonial-card" key={`${item.name}-${index}`}>
-              <div className="card-stars">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} />
-                ))}
-              </div>
-
-              <FaQuoteRight className="quote-icon" />
-
-              <p className="review">"{item.text}"</p>
-
-              <div className="client">
-                {item.image ? (
-                  <img src={item.image} alt={item.name} />
-                ) : (
-                  <div className="client-avatar" aria-hidden="true">
-                    {getInitials(item.name)}
-                  </div>
-                )}
-
-                <div>
-                  <h4>{item.name}</h4>
-                  <span>{item.role}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {isModalOpen && (
         <div
@@ -218,6 +168,78 @@ const Testimonials = () => {
           </div>
         </div>
       )}
+    </>
+  );
+}
+
+const Testimonials = () => {
+  const [reviews, setReviews] = useState(defaultTestimonials);
+
+  const sliderItems = useMemo(() => [...reviews, ...reviews], [reviews]);
+
+  const getInitials = (name) =>
+    name
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0]?.toUpperCase())
+      .join("");
+
+  return (
+    <section className="testimonials">
+      <div className="heading-stars">
+        {[...Array(5)].map((_, i) => (
+          <FaStar key={i} />
+        ))}
+      </div>
+
+      <h2>Don't just take our word for it.</h2>
+
+      <p className="subtitle">
+        Hear from the visionaries and market leaders we've partnered with.
+      </p>
+
+      <ReviewModalButton
+        className="review-btn"
+        onSubmitReview={(review) => {
+          setReviews((current) => [...current, review]);
+        }}
+      >
+        Write a Review <span aria-hidden="true">*</span>
+      </ReviewModalButton>
+
+      <div className="testimonial-slider">
+        <div className="slider-track">
+          {sliderItems.map((item, index) => (
+            <div className="testimonial-card" key={`${item.name}-${index}`}>
+              <div className="card-stars">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+
+              <FaQuoteRight className="quote-icon" />
+
+              <p className="review">"{item.text}"</p>
+
+              <div className="client">
+                {item.image ? (
+                  <img src={item.image} alt={item.name} />
+                ) : (
+                  <div className="client-avatar" aria-hidden="true">
+                    {getInitials(item.name)}
+                  </div>
+                )}
+
+                <div>
+                  <h4>{item.name}</h4>
+                  <span>{item.role}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

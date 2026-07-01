@@ -161,14 +161,14 @@
   flex: 0 1 44%;
   position: relative;
 }
-
 .home-dashboard-card {
   position: relative;
-  background: rgba(255,255,255,0.85);
+  overflow: visible;
+  background: rgba(255,255,255,.85);
   backdrop-filter: blur(20px);
   border-radius: 30px;
   padding: clamp(20px, 3vw, 30px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+  box-shadow: 0 30px 80px rgba(0,0,0,.08);
 }
 
 .home-dashboard-header {
@@ -218,13 +218,12 @@
 
 .home-floating-card {
   position: absolute;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 12px;
-  min-width: 110px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-
+  z-index: 999;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 14px;
+  min-width: 135px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
   animation: homeFloatCard 4s ease-in-out infinite;
 }
 

@@ -16,44 +16,47 @@ const Hero = () => {
   };
 
   return (
-    <section className="service-hero">
-      {/* Background Video */}
-      <video className="hero-video" autoPlay muted loop playsInline>
+    <section className="ai-hero">
+      <video className="ai-hero__video" autoPlay muted loop playsInline>
         <source src={aiVideo} type="video/mp4" />
       </video>
 
-      {/* Dark Overlay */}
-      <div className="hero-overlay"></div>
+      <div className="ai-hero__overlay"></div>
+      <div className="ai-hero__glow"></div>
 
-      <div className="hero-container">
+      <div className="ai-hero__container">
         <div
-          className="hero-content"
+          className="ai-hero__content"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <h1>
+          <div className="ai-hero__eyebrow">AI Agents for Modern Teams</div>
+
+          <h1 className="ai-hero__title">
             Transform Customer
             <br />
             Conversations Into
             <br />
-            <span>Automated Business</span>
-            <br />
-            <span>Growth</span>
+            <span className="ai-hero__title-accent">
+              Automated Business
+              <br />
+              Growth
+            </span>
           </h1>
 
-          <p>
+          <p className="ai-hero__description">
             We design intelligent AI systems that automate support, qualify
             leads, streamline operations, and help businesses scale faster.
           </p>
 
-          <div className="hero-buttons">
-            <Link to="/contact-consultation" className="primary-btn">
+          <div className="ai-hero__actions">
+            <Link to="/contact-consultation" className="ai-hero__primary">
               Get Free Consultation ->
             </Link>
 
             <button
               type="button"
-              className="secondary-btn"
+              className="ai-hero__secondary"
               onClick={scrollToWork}
             >
               View Our Work

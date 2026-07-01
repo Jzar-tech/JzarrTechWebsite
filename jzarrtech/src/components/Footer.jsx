@@ -95,6 +95,21 @@ const Footer = () => {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link to="/terms-and-conditions" className="footer-link">
+                Terms and Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacy-policy" className="footer-link">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/disclaimer" className="footer-link">
+                Disclaimer
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -103,8 +118,8 @@ const Footer = () => {
 
           <ul>
             <li>hello@jzarrtech.com</li>
-            <li>+1 (725) 2455681</li>
-            <li>San Francisco, CA</li>
+            <li>(021) 36271630</li>
+            <li>C, 10 Rashid Minhas Rd, Block 10-A Block 10 A Gulshan-e-Iqbal, Karachi, 75300, Pakistan</li>
           </ul>
 
           <div className="social-icons">
@@ -142,8 +157,8 @@ const Footer = () => {
         <p>(c) 2026 Jzarr Tech. All rights reserved.</p>
 
         <div className="bottom-links">
-          <a href="/">Privacy Policy</a>
-          <a href="/">Terms of Service</a>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-and-conditions">Terms of Service</Link>
 
           <span className="status">All systems operational</span>
         </div>

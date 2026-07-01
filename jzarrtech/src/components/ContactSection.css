@@ -144,7 +144,14 @@
 .contact-form-box h3 {
   font-size: 24px;
   color: #07122f;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-form-subtitle {
+  margin: 0 0 24px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .contact-form-box * {
@@ -230,6 +237,36 @@
   border-color: #2563eb;
 }
 
+.terms-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #556987;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.contact-form-box .terms-consent input {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  margin-top: 3px;
+  padding: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.terms-consent a {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.terms-consent a:hover {
+  text-decoration: underline;
+}
+
 .send-btn {
   width: 100%;
   height: 52px;
@@ -280,5 +317,9 @@
 
   .contact-form-box h3 {
     font-size: 22px;
+  }
+
+  .contact-form-subtitle {
+    font-size: 14px;
   }
 }
