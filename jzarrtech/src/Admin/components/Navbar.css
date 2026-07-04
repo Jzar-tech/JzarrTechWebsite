@@ -1,0 +1,269 @@
+.admin-navbar{
+
+    height:80px;
+
+    width:100%;
+
+    padding:0 28px;
+
+    background:#08111e;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+.admin-navbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.hamburger-btn{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#1e293b;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.hamburger-btn:hover{
+
+    background:#2563eb;
+
+}
+
+.admin-navbar-left h2{
+
+    color:white;
+
+    margin:0;
+
+    font-size:25px;
+
+}
+
+.admin-navbar-left p{
+
+    margin-top:4px;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+.admin-navbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.admin-btn{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.admin-btn.secondary{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+.admin-btn.secondary:hover{
+
+    background:#334155;
+
+}
+
+.admin-btn.primary{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    color:white;
+
+}
+
+.admin-btn.primary:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.admin-export{
+
+    position:relative;
+
+}
+
+.admin-export-menu{
+
+    position:absolute;
+
+    top:60px;
+
+    right:0;
+
+    width:190px;
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+
+    animation:dropdown .25s ease;
+
+}
+
+@keyframes dropdown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.admin-export-menu button{
+
+    width:100%;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.admin-export-menu button:hover{
+
+    background:#1e293b;
+
+}
+
+.arrow{
+
+    transition:.3s;
+
+}
+
+.rotate{
+
+    transform:rotate(180deg);
+
+}
+
+@media(max-width:768px){
+
+.admin-navbar{
+
+padding:15px;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+height:auto;
+
+gap:15px;
+
+}
+
+.admin-navbar-right{
+
+width:100%;
+
+justify-content:flex-end;
+
+}
+
+.admin-navbar-left h2{
+
+font-size:20px;
+
+}
+
+}

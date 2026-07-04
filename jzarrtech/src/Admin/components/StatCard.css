@@ -1,0 +1,110 @@
+.stat-card{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg,rgba(30,41,59,.98),rgba(17,24,39,.98));
+    border-radius:15px;
+    padding:20px;
+    border:1px solid rgba(148,163,184,.14);
+    transition:.3s;
+    box-shadow:0 18px 40px rgba(2,6,23,.18);
+}
+
+.stat-card-button{
+    width:100%;
+    text-align:left;
+    cursor:pointer;
+    appearance:none;
+    border:1px solid rgba(148,163,184,.14);
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(96,165,250,.35);
+}
+
+.stat-card-button:focus-visible{
+    outline:2px solid #60a5fa;
+    outline-offset:3px;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+    position:relative;
+    z-index:1;
+}
+
+.card-heading{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.card-top h4{
+    font-size:15px;
+    font-weight:600;
+    color:#e5e7eb;
+    margin:0;
+}
+
+.card-icon{
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:color-mix(in srgb, var(--accent) 18%, transparent);
+    color:var(--accent);
+    box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.card-icon svg{
+    font-size:17px;
+}
+
+.card-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 6px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.stat-card h2{
+    margin:0;
+    position:relative;
+    z-index:1;
+    font-size:31px;
+    font-weight:700;
+    color:#ffffff !important;
+    letter-spacing:-.02em;
+}
+
+.stat-card::after{
+    content:"";
+    position:absolute;
+    inset:auto -20% -55% auto;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:radial-gradient(circle, color-mix(in srgb, var(--accent) 24%, transparent) 0%, transparent 70%);
+    pointer-events:none;
+}
+
+@supports not (background: color-mix(in srgb, #000 10%, transparent)) {
+    .card-icon{
+        background:rgba(255,255,255,.08);
+        box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+    }
+
+    .card-dot{
+        box-shadow:0 0 0 6px rgba(255,255,255,.06);
+    }
+
+    .stat-card::after{
+        background:radial-gradient(circle, rgba(255,255,255,.12) 0%, transparent 70%);
+    }
+}

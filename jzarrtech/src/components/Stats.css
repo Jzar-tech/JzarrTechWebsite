@@ -1,9 +1,9 @@
-.stats-section {
-  padding: -40px 20px;
+.home-stats-section {
+  padding: 40px 20px;
   background: #f8fafc;
 }
 
-.stats-container {
+.home-stats-container {
   max-width: 1100px;
   margin: 0 auto;
 
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.stat-card {
+.home-stat-card {
   flex: 1;
 
   background: #ffffff;
@@ -25,13 +25,13 @@
   transition: all 0.3s ease;
 }
 
-.stat-card:hover {
+.home-stat-card:hover {
   transform: translateY(-4px);
 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-.stat-card h2 {
+.home-stat-card h2 {
   font-size: 42px;
   font-weight: 800;
   color: #07122f;
@@ -39,7 +39,7 @@
   margin-bottom: 10px;
 }
 
-.stat-card h4 {
+.home-stat-card h4 {
   font-size: 18px;
   font-weight: 700;
   color: #07122f;
@@ -47,7 +47,7 @@
   margin-bottom: 8px;
 }
 
-.stat-card p {
+.home-stat-card p {
   font-size: 14px;
   line-height: 1.6;
   color: #64748b;
@@ -56,11 +56,11 @@
 /* Tablet */
 
 @media (max-width: 992px) {
-  .stats-container {
+  .home-stats-container {
     flex-direction: column;
   }
 
-  .stat-card h2 {
+  .home-stat-card h2 {
     font-size: 36px;
   }
 }
@@ -68,23 +68,23 @@
 /* Mobile */
 
 @media (max-width: 768px) {
-  .stats-section {
+  .home-stats-section {
     padding: 40px 15px;
   }
 
-  .stat-card {
+  .home-stat-card {
     padding: 20px;
   }
 
-  .stat-card h2 {
+  .home-stat-card h2 {
     font-size: 32px;
   }
 
-  .stat-card h4 {
+  .home-stat-card h4 {
     font-size: 16px;
   }
 
-  .stat-card p {
+  .home-stat-card p {
     font-size: 13px;
   }
 }

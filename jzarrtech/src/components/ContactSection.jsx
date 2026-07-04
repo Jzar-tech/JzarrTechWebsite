@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./ContactSection.css";
 import { FaCalendarAlt, FaClock, FaVideo } from "react-icons/fa";
 import CountryCodeSelect from "./CountryCodeSelect";
@@ -30,6 +30,8 @@ export function ContactMessageForm({
   submitLabel = "Send Request",
 }) {
   const [formData, setFormData] = useState(initialForm);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -65,31 +67,39 @@ export function ContactMessageForm({
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    try {
-      const contactPayload = {
-        formId,
-        name: `${formData.firstName} ${formData.lastName}`.trim(),
-        email: formData.email,
-        whatsapp: formData.phone,
-        service: formData.service,
-        subject: `Website inquiry - ${formData.service}`,
-        message: formData.details,
-      };
+  setLoading(true);
 
-      const response = await axios.post(CONTACT_API_URL, contactPayload);
-      alert(response.data.message || "Thanks. Your message has been received.");
-      setFormData(initialForm);
-    } catch (error) {
-      console.error(error);
-      alert(
-        error.response?.data?.message ||
-          "We could not send your message. Please try again later.",
-      );
-    }
-  };
+  try {
+    const contactPayload = {
+      formId,
+      name: `${formData.firstName} ${formData.lastName}`.trim(),
+      email: formData.email,
+      whatsapp: formData.phone,
+      service: formData.service,
+      subject: `Website inquiry - ${formData.service}`,
+      message: formData.details,
+    };
 
+    await axios.post(CONTACT_API_URL, contactPayload);
+
+    setFormData(initialForm);
+
+    navigate("/thank-you");
+
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      error.response?.data?.message ||
+      "We could not send your message."
+    );
+
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className={`contact-form-box ${className}`.trim()}>
       <h3>{title}</h3>
@@ -192,9 +202,20 @@ export function ContactMessageForm({
   </span>
 </label>
 
-        <button type="submit" className="send-btn">
-          {submitLabel}
-        </button>
+        <button
+  type="submit"
+  className="send-btn"
+  disabled={loading}
+>
+  {loading ? (
+    <>
+      <span className="spinner"></span>
+      Sending...
+    </>
+  ) : (
+    submitLabel
+  )}
+</button>
       </form>
     </div>
   );
