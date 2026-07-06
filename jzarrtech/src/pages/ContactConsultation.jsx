@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   FaCalendarAlt,
@@ -18,6 +18,7 @@ import "./ContactConsultation.css";
 import { getPhoneMaxLength, sanitizePhoneInput } from "../utils/phoneValidation";
 import { CONTACT_API_URL } from "../config/api";
 
+
 const initialForm = {
   firstName: "",
   lastName: "",
@@ -33,6 +34,8 @@ const sanitizeName = (value) => value.replace(/[^a-zA-Z\s'-]/g, "");
 const ContactConsultation = () => {
   const [formData, setFormData] = useState(initialForm);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -64,32 +67,38 @@ const ContactConsultation = () => {
   const handleSubmit = async (event) => {
   event.preventDefault();
 
+  setLoading(true);
+
+  const contactPayload = {
+    formId: "website-consultation",
+    name: `${formData.firstName} ${formData.lastName}`.trim(),
+    email: formData.email,
+    whatsapp: formData.phone,
+    occupation: formData.company,
+    service: formData.service,
+    subject: `Website inquiry - ${formData.service}`,
+    message: formData.details,
+  };
+
   try {
-    const contactPayload = {
-      formId: "website-consultation",
-      name: `${formData.firstName} ${formData.lastName}`.trim(),
-      email: formData.email,
-      whatsapp: formData.phone,
-      occupation: formData.company,
-      service: formData.service,
-      subject: `Website inquiry - ${formData.service}`,
-      message: formData.details,
-    };
-
-    const response = await axios.post(CONTACT_API_URL, contactPayload);
-
-    setIsSubmitted(true);
-
-    alert(response.data.message || "Thanks. Your message has been received.");
+    await axios.post(CONTACT_API_URL, contactPayload);
 
     setFormData(initialForm);
 
+    navigate("/thank-you");
+
   } catch (error) {
+
     console.error(error);
+
     alert(
       error.response?.data?.message ||
-        "We could not send your message. Please try again later.",
+      "We could not send your message. Please try again later."
     );
+
+  } finally {
+
+    setLoading(false);
 
   }
 };
@@ -290,16 +299,22 @@ const ContactConsultation = () => {
                     </span>
                   </label>
 
-                  <button type="submit" className="contact-send-btn">
-                    Send Request
-                  </button>
+                  <button
+  type="submit"
+  className="contact-send-btn"
+  disabled={loading}
+>
+  {loading ? (
+    <>
+      <span className="btn-spinner"></span>
+      Sending...
+    </>
+  ) : (
+    "Send Request"
+  )}
+</button>
 
-                  {isSubmitted && (
-                    <p className="contact-success-message">
-                      Thanks. Your message has been received and our team will
-                      get back to you shortly.
-                    </p>
-                  )}
+                
                 </form>
               </div>
             </div>

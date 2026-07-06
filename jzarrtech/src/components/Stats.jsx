@@ -21,10 +21,10 @@ const Stats = () => {
   ];
 
   return (
-    <section className="stats-section">
-      <div className="stats-container">
+    <section className="home-stats-section">
+      <div className="home-stats-container">
         {stats.map((item, index) => (
-          <div className="stat-card" key={index}>
+          <div className="home-stat-card" key={index}>
             <h2>{item.number}</h2>
             <h4>{item.title}</h4>
             <p>{item.description}</p>

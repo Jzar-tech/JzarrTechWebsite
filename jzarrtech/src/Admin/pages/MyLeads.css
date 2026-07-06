@@ -1,0 +1,121 @@
+.myleads-header{
+
+    margin-bottom:30px;
+
+}
+
+.myleads-header h1{
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.myleads-header p{
+
+    color:#9ca3af;
+
+}
+
+.myleads-table{
+
+    background:#1f2937;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.myleads-table table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.myleads-table th{
+
+    background:#111827;
+
+    color:white;
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+.myleads-table td{
+
+    padding:16px;
+
+    color:#d1d5db;
+
+    border-top:1px solid #374151;
+
+}
+
+.myleads-table tr:hover{
+
+    background:#273449;
+
+}
+
+.myleads-table select{
+
+    width:100%;
+
+    padding:10px;
+
+    background:#111827;
+
+    color:white;
+
+    border:1px solid #374151;
+
+    border-radius:8px;
+
+    outline:none;
+
+}
+
+.new{
+
+    background:#f59e0b;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+.assigned{
+
+    background:#10b981;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+.assigned-name{
+
+    margin-top:8px;
+
+    color:#10b981;
+
+    font-size:13px;
+
+}
