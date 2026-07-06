@@ -126,9 +126,16 @@
 
 .apihero-buttons {
   display: flex;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 34px;
+}
+
+.apihero-buttons a,
+.apihero-buttons button {
+  width: auto;
+  flex: 0 0 auto;
 }
 
 .apihero-btn-primary,

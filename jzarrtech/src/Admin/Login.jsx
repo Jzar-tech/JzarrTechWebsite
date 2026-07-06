@@ -30,7 +30,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [setupName, setSetupName] = useState("Jzarr Admin");
   const [setupEmail, setSetupEmail] = useState("admin@jzarrtech.com");
-  const [setupPassword, setSetupPassword] = useState("JzarrTech@2026");
+  const [setupPassword, setSetupPassword] = useState("");
 
   const hasUsers = useMemo(() => getUsers().length > 0, []);
   const isInitialSetup = !hasUsers;
