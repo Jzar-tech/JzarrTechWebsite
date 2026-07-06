@@ -33,7 +33,6 @@ const initialForm = {
 const sanitizeName = (value) => value.replace(/[^a-zA-Z\s'-]/g, "");
 const ContactConsultation = () => {
   const [formData, setFormData] = useState(initialForm);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
