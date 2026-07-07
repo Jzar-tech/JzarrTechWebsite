@@ -1,0 +1,4429 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="JzarrTech AI Agent Bot landing page for business automation, lead qualification, support, CRM workflows, and finance-ready operations.">
+  <title>AI Agent Bot for Business Automation | JzarrTech</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+    :root {
+      --midnight: #020b2d;
+      --ink: #07122f;
+      --ink-2: #0f172a;
+      --ink-3: #111827;
+      --brand-navy: #082858;
+      --brand-blue: #1858a8;
+      --blue: #2563eb;
+      --blue-2: #1858a8;
+      --sky: #0ea5e9;
+      --cyan: #06b6d4;
+      --indigo: #6366f1;
+      --violet: #7c3aed;
+      --purple: #8b5cf6;
+      --magenta: #ec4899;
+      --orange: #60a5fa;
+      --gold: #38bdf8;
+      --green: #10b981;
+      --paper: #f8fbff;
+      --paper-2: #eef4ff;
+      --paper-3: #f5f9ff;
+      --line: #dbe3ef;
+      --muted: #64748b;
+      --white: #ffffff;
+      --brand-gradient: linear-gradient(135deg, var(--brand-blue), var(--blue), var(--violet));
+      --signal-gradient: linear-gradient(135deg, var(--cyan), var(--blue), var(--purple), var(--indigo));
+      --heat-gradient: linear-gradient(135deg, var(--blue), var(--cyan));
+      --shadow: 0 24px 70px rgba(8, 40, 88, 0.15);
+      --shadow-strong: 0 30px 90px rgba(2, 11, 45, 0.38);
+      --brand-glow: 0 0 34px rgba(37, 99, 235, 0.28), 0 0 72px rgba(124, 58, 237, 0.16);
+      --radius: 14px;
+      --wrap: min(1180px, calc(100% - 40px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: 124px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink-2);
+      background:
+        linear-gradient(120deg, rgba(24, 88, 168, 0.1), transparent 34%),
+        linear-gradient(250deg, rgba(124, 58, 237, 0.08), transparent 38%),
+        linear-gradient(180deg, rgba(255, 123, 0, 0.035), transparent 42%),
+        linear-gradient(180deg, var(--paper), #ffffff 48%, var(--paper-2));
+      font-family: "Poppins", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(180deg, transparent, #000 16%, #000 74%, transparent);
+    }
+
+    ::selection {
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    img,
+    svg {
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .wrap {
+      width: var(--wrap);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      z-index: 50;
+      width: var(--wrap);
+      min-height: 96px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(219, 227, 239, 0.9);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(ellipse at 15% 0%, rgba(56, 189, 248, 0.12), transparent 60%),
+        radial-gradient(ellipse at 85% 100%, rgba(37, 99, 235, 0.08), transparent 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.94));
+      box-shadow: 0 20px 60px rgba(8, 40, 88, 0.12), 0 0 30px rgba(56, 189, 248, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(219, 227, 239, 0.6);
+      backdrop-filter: blur(32px) saturate(160%);
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .site-header:hover {
+      border-color: rgba(37, 99, 235, 0.38);
+      box-shadow: 0 26px 70px rgba(8, 40, 88, 0.16), 0 0 40px rgba(56, 189, 248, 0.22), inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(37, 99, 235, 0.25);
+      transform: translateX(-50%) translateY(-2px);
+    }
+
+    .site-header::before {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      content: "";
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: linear-gradient(90deg, #38bdf8, #1858a8, #00d4ff, #2563eb, #38bdf8);
+      background-size: 300% 100%;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.85), 0 0 30px rgba(24, 88, 168, 0.6);
+      animation: gradientBreath 6s ease-in-out infinite;
+    }
+
+    .nav {
+      display: flex;
+      min-height: 96px;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 8px 40px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--ink);
+      font-size: 1.16rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .brand img {
+      width: 230px;
+      height: 96px;
+      object-fit: contain;
+      transform: scale(1.15);
+      filter: drop-shadow(0 6px 16px rgba(24, 88, 168, 0.22)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.15)) brightness(1.02) contrast(1.05);
+      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .brand:hover img {
+      transform: scale(1.2);
+      filter: drop-shadow(0 8px 22px rgba(24, 88, 168, 0.35)) drop-shadow(0 0 16px rgba(56, 189, 248, 0.25)) brightness(1.05) contrast(1.06);
+    }
+
+    .site-header,
+    .hero-panel,
+    .stat,
+    .feature-card,
+    .control-console,
+    .decision-card,
+    .matrix-card,
+    .step,
+    .integration,
+    .review,
+    .contact-form,
+    .modal-box,
+    .chatbot-panel {
+      overflow: hidden;
+    }
+
+    .hero-panel,
+    .stat,
+    .feature-card,
+    .control-console,
+    .decision-card,
+    .matrix-card,
+    .step,
+    .integration,
+    .review,
+    .contact-form,
+    .modal-box,
+    .chatbot-panel {
+      position: relative;
+    }
+
+    .site-header::after,
+    .hero-panel::after,
+    .stat::after,
+    .feature-card::after,
+    .control-console::after,
+    .decision-card::after,
+    .matrix-card::after,
+    .step::after,
+    .integration::after,
+    .review::after,
+    .contact-form::after,
+    .modal-box::after,
+    .chatbot-panel::after {
+      position: absolute;
+      inset: -35%;
+      z-index: 0;
+      content: "";
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(-70%) rotate(12deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+    }
+
+    .site-header.glass-sweep::after,
+    .hero-panel.glass-sweep::after,
+    .stat.glass-sweep::after,
+    .feature-card.glass-sweep::after,
+    .control-console.glass-sweep::after,
+    .decision-card.glass-sweep::after,
+    .matrix-card.glass-sweep::after,
+    .step.glass-sweep::after,
+    .integration.glass-sweep::after,
+    .review.glass-sweep::after,
+    .contact-form.glass-sweep::after,
+    .modal-box.glass-sweep::after,
+    .chatbot-panel.glass-sweep::after {
+      animation: glassSweep 1150ms ease;
+    }
+
+    .site-header>*,
+    .hero-panel>*,
+    .stat>*,
+    .feature-card>*,
+    .control-console>*,
+    .decision-card>*,
+    .matrix-card>*,
+    .step>*,
+    .integration>*,
+    .review>*,
+    .contact-form>*,
+    .modal-box>*,
+    .chatbot-panel>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes glassSweep {
+      0% {
+        opacity: 0;
+        transform: translateX(-80%) rotate(12deg);
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(80%) rotate(12deg);
+      }
+    }
+
+    @keyframes buttonSheen {
+      from {
+        transform: translateX(-72%) rotate(18deg);
+      }
+
+      to {
+        transform: translateX(72%) rotate(18deg);
+      }
+    }
+
+    @keyframes gradientBreath {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes auroraTurn {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes gridDrift {
+      from {
+        background-position: 0 0, 0 0;
+      }
+
+      to {
+        background-position: 88px 88px, 88px 88px;
+      }
+    }
+
+    @keyframes glowFloat {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(18px, -24px, 0) scale(1.08);
+      }
+    }
+
+    @keyframes particleFloat {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(var(--tx), var(--ty), 0) scale(var(--scale));
+      }
+    }
+
+    @keyframes particleBlink {
+
+      0%,
+      100% {
+        opacity: var(--o-low);
+      }
+
+      45%,
+      62% {
+        opacity: var(--o);
+      }
+    }
+
+    @keyframes nodePulse {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: translate3d(0, 0, 0) scale(0.86);
+      }
+
+      50% {
+        opacity: 0.68;
+        transform: translate3d(var(--tx), var(--ty), 0) scale(1.24);
+      }
+    }
+
+    @keyframes linkFlash {
+
+      0%,
+      100% {
+        opacity: 0.08;
+        filter: blur(0);
+      }
+
+      50% {
+        opacity: 0.72;
+        filter: blur(0.2px);
+      }
+    }
+
+    @keyframes dataFall {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -22vh, 0);
+      }
+
+      12%,
+      78% {
+        opacity: var(--o);
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(var(--tx), 118vh, 0);
+      }
+    }
+
+    @keyframes heroScan {
+
+      0%,
+      35% {
+        transform: translateY(-100%);
+      }
+
+      72%,
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes intelSweep {
+
+      0%,
+      38% {
+        transform: translateX(-105%);
+      }
+
+      78%,
+      100% {
+        transform: translateX(105%);
+      }
+    }
+
+    @keyframes barListen {
+
+      0%,
+      100% {
+        transform: scaleY(0.62);
+        opacity: 0.58;
+      }
+
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    .js-tilt {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .magnetic {
+      will-change: transform;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius);
+      padding: 13px 22px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn::after {
+      position: absolute;
+      inset: -120% -45%;
+      content: "";
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-65%) rotate(18deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.36), transparent);
+      transition: opacity 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+      animation: buttonSheen 760ms ease;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, #0284c7, var(--blue), var(--violet));
+      background-size: 200% 200%;
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.35), 0 0 24px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      animation: gradientBreath 8s ease-in-out infinite;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 48px rgba(37, 99, 235, 0.48), 0 0 34px rgba(56, 189, 248, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-dark {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--ink), var(--midnight));
+      box-shadow: 0 18px 38px rgba(7, 18, 47, 0.22);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: auto;
+      overflow: hidden;
+      padding: 172px 0 100px;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(0, 212, 255, 0.15), transparent 50%),
+        radial-gradient(ellipse at 85% 60%, rgba(24, 88, 168, 0.12), transparent 50%),
+        linear-gradient(180deg, #ffffff 0%, #f4f9ff 60%, #e6f2ff 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: -24%;
+      z-index: -1;
+      content: "";
+      opacity: 0.8;
+      pointer-events: none;
+      background:
+        conic-gradient(from 130deg at 56% 46%, transparent 0 18%, rgba(0, 212, 255, 0.12) 24%, transparent 34% 48%, rgba(24, 88, 168, 0.12) 56%, transparent 70%),
+        repeating-linear-gradient(120deg, transparent 0 44px, rgba(24, 88, 168, 0.05) 45px, transparent 47px),
+        repeating-linear-gradient(30deg, transparent 0 58px, rgba(0, 212, 255, 0.04) 59px, transparent 61px);
+      animation: auroraTurn 24s linear infinite;
+    }
+
+    .hero::after {
+      display: none;
+    }
+
+    .ai-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .ai-grid {
+      position: absolute;
+      inset: -20%;
+      opacity: 0.65;
+      background-image:
+        linear-gradient(rgba(24, 88, 168, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 88, 168, 0.08) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at 50% 42%, #000 0 55%, transparent 80%);
+      transform: perspective(900px) rotateX(58deg) translateY(-12%);
+      animation: gridDrift 18s linear infinite;
+    }
+
+    .ai-bg::before,
+    .ai-bg::after {
+      position: absolute;
+      content: "";
+      pointer-events: none;
+      filter: blur(18px);
+      mix-blend-mode: screen;
+      animation: glowFloat 12s ease-in-out infinite;
+    }
+
+    .ai-bg::before {
+      width: 62vw;
+      height: 120px;
+      top: 13%;
+      left: -10%;
+      rotate: -12deg;
+      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.24), rgba(6, 182, 212, 0.14), transparent);
+    }
+
+    .ai-bg::after {
+      width: 54vw;
+      height: 110px;
+      right: -8%;
+      bottom: 10%;
+      rotate: 15deg;
+      background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.22), rgba(255, 123, 0, 0.12), transparent);
+      animation-delay: -5s;
+    }
+
+    .neural-field {
+      position: absolute;
+      inset: 0;
+      opacity: 0.58;
+      filter: saturate(1.2);
+    }
+
+    .ai-particle,
+    .neural-node,
+    .neural-link,
+    .data-bit {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+
+    .ai-particle {
+      width: var(--s);
+      height: var(--s);
+      border-radius: 50%;
+      opacity: var(--o);
+      background: var(--c);
+      box-shadow: 0 0 18px var(--c);
+      animation:
+        particleFloat var(--d) ease-in-out var(--delay) infinite,
+        particleBlink var(--blink) ease-in-out var(--delay) infinite;
+    }
+
+    .neural-node {
+      width: var(--s);
+      height: var(--s);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      opacity: 0.72;
+      background: radial-gradient(circle, var(--c), transparent 68%);
+      box-shadow: 0 0 18px var(--c);
+      animation: nodePulse var(--d) ease-in-out var(--delay) infinite;
+    }
+
+    .neural-link {
+      width: var(--w);
+      height: 1px;
+      opacity: 0.42;
+      transform: rotate(var(--r));
+      transform-origin: left center;
+      background: linear-gradient(90deg, transparent, var(--c), transparent);
+      animation: linkFlash var(--d) ease-in-out var(--delay) infinite;
+    }
+
+    .data-bit {
+      color: rgba(255, 255, 255, 0.26);
+      font-size: var(--fs);
+      font-weight: 800;
+      letter-spacing: 0;
+      text-shadow: 0 0 18px rgba(6, 182, 212, 0.34);
+      animation: dataFall var(--d) linear var(--delay) infinite;
+    }
+
+    .hero-scan {
+      position: absolute;
+      inset: 0;
+      opacity: 0.36;
+      background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.16), transparent);
+      transform: translateY(-100%);
+      animation: heroScan 7s ease-in-out infinite;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.78fr);
+      align-items: start;
+      gap: 52px;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .hero-panel {
+      margin-top: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--sky);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--heat-gradient);
+      content: "";
+      box-shadow: 0 0 0 6px rgba(255, 123, 0, 0.13);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      max-width: 100%;
+      margin: 14px 0 16px;
+      font-size: clamp(2.1rem, 3.6vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .gradient-text {
+      display: inline;
+      color: transparent;
+      background: linear-gradient(90deg, #1858a8 0%, #2563eb 24%, #00d4ff 50%, #1858a8 82%, #2563eb 100%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: gradientBreath 7s ease-in-out infinite;
+    }
+
+    .hero-lead {
+      max-width: 650px;
+      margin-bottom: 28px;
+      color: rgba(7, 18, 47, 0.82);
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    /* AI Interactive Prompting Console & Typewriter Styles */
+    .ai-prompt-console {
+      position: relative;
+      margin-bottom: 24px;
+      border: 1px solid rgba(56, 189, 248, 0.38);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      background:
+        linear-gradient(135deg, rgba(7, 18, 47, 0.92), rgba(2, 11, 45, 0.95)),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.18), rgba(124, 58, 237, 0.15));
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 34px rgba(6, 182, 212, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(24px);
+      overflow: hidden;
+      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ai-prompt-console:hover {
+      border-color: rgba(56, 189, 248, 0.65);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55), 0 0 44px rgba(6, 182, 212, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }
+
+    .prompt-console-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .prompt-window-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .prompt-window-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .prompt-window-dots .dot.red { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+    .prompt-window-dots .dot.yellow { background: #38bdf8; box-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
+    .prompt-window-dots .dot.green { background: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+
+    .prompt-model-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+    }
+
+    .prompt-model-tag .model-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+      animation: nodePulse 1.8s infinite;
+    }
+
+    .prompt-latency {
+      color: var(--gold);
+      font-family: monospace;
+      font-size: 0.75rem;
+    }
+
+    .prompt-console-body {
+      font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+      font-size: clamp(0.88rem, 1.4vw, 0.98rem);
+      line-height: 1.6;
+      color: var(--white);
+    }
+
+    .prompt-line {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .prompt-symbol {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .prompt-keyword {
+      color: var(--violet);
+      font-weight: 700;
+    }
+
+    .prompt-flag {
+      color: var(--cyan);
+    }
+
+    .prompt-string {
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .prompt-inline-cursor {
+      display: inline-block;
+      color: var(--cyan);
+      font-size: 0.85em;
+      font-weight: 800;
+      vertical-align: baseline;
+      animation: cursorBlink 0.75s step-end infinite;
+    }
+
+    .prompt-status-strip {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .status-pill {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.4;
+      max-width: 100%;
+    }
+
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .ai-cursor {
+      display: inline-block;
+      color: var(--cyan);
+      font-size: 0.52em;
+      font-weight: 300;
+      vertical-align: middle;
+      margin-left: 3px;
+      text-shadow: 0 0 12px var(--cyan);
+      animation: cursorBlink 0.75s step-end infinite;
+    }
+
+    .prompt-selector-pills {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 28px;
+    }
+
+    .selector-label {
+      color: var(--sky);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .prompt-pill {
+      background: rgba(24, 88, 168, 0.08);
+      border: 1px solid rgba(24, 88, 168, 0.22);
+      border-radius: 999px;
+      padding: 7px 16px;
+      color: #082858;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .prompt-pill:hover,
+    .prompt-pill.active {
+      background: linear-gradient(135deg, #1858a8, #2563eb);
+      border-color: #00d4ff;
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .hero-intel-strip {
+      display: grid;
+      max-width: 720px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 0;
+    }
+
+    .intel-card {
+      position: relative;
+      min-height: 104px;
+      overflow: hidden;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: linear-gradient(135deg, rgba(8, 40, 88, 0.92), rgba(7, 18, 47, 0.96));
+      box-shadow: 0 18px 44px rgba(8, 40, 88, 0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .intel-card::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      opacity: 0.78;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent),
+        linear-gradient(125deg, rgba(6, 182, 212, 0.22), transparent 42%);
+      transform: translateX(-100%);
+      animation: intelSweep 5.2s ease-in-out infinite;
+    }
+
+    .intel-card:nth-child(2)::before {
+      animation-delay: -1.7s;
+      background:
+        linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent),
+        linear-gradient(125deg, rgba(124, 58, 237, 0.24), transparent 42%);
+    }
+
+    .intel-card:nth-child(3)::before {
+      animation-delay: -3.4s;
+      background:
+        linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent),
+        linear-gradient(125deg, rgba(255, 123, 0, 0.2), transparent 42%);
+    }
+
+    .intel-card:nth-child(4)::before {
+      animation-delay: -5.1s;
+      background:
+        linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent),
+        linear-gradient(125deg, rgba(16, 185, 129, 0.24), transparent 42%);
+    }
+
+    .intel-card small,
+    .intel-card strong,
+    .intel-card b,
+    .intel-card span {
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    .intel-card small {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .intel-card strong {
+      margin-top: 8px;
+      color: var(--white);
+      font-size: 1.34rem;
+      line-height: 1;
+    }
+
+    .intel-card span {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .signal-bars {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: end;
+      gap: 5px;
+      height: 25px;
+      margin-top: 10px;
+    }
+
+    .signal-bars i {
+      width: 9px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 14px rgba(6, 182, 212, 0.45);
+      animation: barListen 1.7s ease-in-out infinite;
+    }
+
+    .signal-bars i:nth-child(1) {
+      height: 34%;
+    }
+
+    .signal-bars i:nth-child(2) {
+      height: 68%;
+      animation-delay: -0.32s;
+    }
+
+    .signal-bars i:nth-child(3) {
+      height: 48%;
+      animation-delay: -0.66s;
+    }
+
+    .signal-bars i:nth-child(4) {
+      height: 88%;
+      animation-delay: -0.98s;
+    }
+
+    .hero-panel {
+      position: relative;
+      margin-top: 0;
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      background:
+        linear-gradient(180deg, rgba(7, 18, 47, 0.88), rgba(2, 11, 45, 0.86)),
+        linear-gradient(135deg, rgba(24, 88, 168, 0.25), rgba(124, 58, 237, 0.15));
+      box-shadow: 0 28px 70px rgba(2, 11, 45, 0.5), 0 0 40px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(32px);
+      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-panel:hover {
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 34px 80px rgba(2, 11, 45, 0.6), 0 0 50px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-panel::before {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      content: "";
+      pointer-events: none;
+      opacity: 0.52;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        radial-gradient(circle at var(--mx, 12%) var(--my, 14%), rgba(6, 182, 212, 0.18), transparent 30%),
+        linear-gradient(120deg, rgba(6, 182, 212, 0.12), transparent 34%);
+      background-size: 28px 28px, 28px 28px, auto, auto;
+    }
+
+    .hero-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero-form h3 {
+      margin: 0 0 2px;
+      color: var(--white);
+      font-size: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .hero-form>p {
+      margin: 0 0 6px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .hero-form .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .hero-field {
+      min-width: 0;
+    }
+
+    .hero-field label {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-field input,
+    .hero-field select,
+    .hero-field textarea {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      color: var(--white);
+      outline: 0;
+      background: rgba(0, 0, 0, 0.32);
+      font-size: 0.9rem;
+      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-field textarea {
+      min-height: 64px;
+      resize: vertical;
+    }
+
+    .hero-field input::placeholder,
+    .hero-field textarea::placeholder {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    .hero-field select {
+      color-scheme: dark;
+      background-color: rgba(7, 18, 47, 0.85);
+    }
+
+    .hero-field select option,
+    select option {
+      background-color: #07122f;
+      color: #ffffff;
+      padding: 10px;
+    }
+
+    .hero-field input:focus,
+    .hero-field select:focus,
+    .hero-field textarea:focus {
+      border-color: #38bdf8;
+      background: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2), 0 0 28px rgba(6, 182, 212, 0.25);
+    }
+
+    .hero-form .btn {
+      width: 100%;
+      margin-top: 2px;
+    }
+
+    .hero-note {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .console {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(7, 18, 47, 0.92));
+    }
+
+    .console-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px;
+    }
+
+    .console-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .console-brand img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+    }
+
+    .console-brand strong,
+    .console-brand small {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .console-brand strong {
+      font-size: 0.96rem;
+    }
+
+    .console-brand small {
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 0.72rem;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      color: #d1fae5;
+      background: rgba(16, 185, 129, 0.12);
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.4;
+      max-width: 100%;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    .console-body {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .metric b {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--white);
+      font-size: 1.12rem;
+    }
+
+    .metric span {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.72rem;
+    }
+
+    .chat-line {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      align-items: start;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .avatar {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: var(--brand-gradient);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .chat-line small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .chat-line p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .task-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .task {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .task span {
+      display: inline-flex;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      padding: 5px 8px;
+      color: var(--ink);
+      background: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+
+    .task strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+
+    .task p {
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+
+    .automation-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .automation-strip span {
+      display: flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.09);
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .automation-strip span:last-child {
+      border-right: 0;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px 13px;
+      color: var(--ink-2);
+      outline: 0;
+      background: var(--white);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(37, 99, 235, 0.65);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.11), 0 14px 34px rgba(37, 99, 235, 0.08);
+    }
+
+    .form-terms-wrap {
+      margin: 4px 0 10px;
+      min-width: 0;
+    }
+
+    .terms-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .terms-label input[type="checkbox"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .custom-checkbox {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(0, 0, 0, 0.35);
+      transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .custom-checkbox svg {
+      width: 12px;
+      height: 10px;
+      color: #ffffff;
+      transform: scale(0);
+      transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .terms-label input[type="checkbox"]:checked + .custom-checkbox {
+      border-color: #38bdf8;
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+    }
+
+    .terms-label input[type="checkbox"]:checked + .custom-checkbox svg {
+      transform: scale(1);
+    }
+
+    .terms-label input[type="checkbox"]:focus-visible + .custom-checkbox {
+      outline: 2px solid #38bdf8;
+      outline-offset: 2px;
+    }
+
+    .terms-text {
+      font-size: 0.78rem;
+      line-height: 1.52;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .terms-text a {
+      color: #38bdf8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 150ms ease;
+    }
+
+    .terms-text a:hover {
+      color: #a7f3ff;
+    }
+
+    .contact-form .custom-checkbox {
+      border-color: var(--line);
+      background: #f8fbff;
+    }
+
+    .contact-form .terms-label input[type="checkbox"]:checked + .custom-checkbox {
+      border-color: #2563eb;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .contact-form .terms-text {
+      color: var(--ink-2);
+    }
+
+    .contact-form .terms-text a {
+      color: #2563eb;
+    }
+
+    .contact-form .terms-text a:hover {
+      color: #1d4ed8;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section,
+    .hero,
+    .stats,
+    .final-cta {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+
+    .section-head.center {
+      display: block;
+      max-width: 760px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .section-head.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section h2 {
+      max-width: 760px;
+      margin: 12px 0 0;
+      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .stats {
+      position: relative;
+      padding: 80px 0 90px;
+      margin-top: 50px;
+      color: var(--white);
+    }
+
+    .stats.dark-band {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, #10194a 0%, var(--midnight) 45%, #081438 100%);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .stats::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 96px;
+      content: "";
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0), var(--paper));
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat-grid .intel-card {
+      position: relative;
+      min-height: 156px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+        rgba(7, 18, 47, 0.4);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(24px);
+      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .stat-grid .intel-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(56, 189, 248, 0.65);
+      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.45), 0 0 38px rgba(56, 189, 248, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .stat-grid .intel-card small {
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stat-grid .intel-card b,
+    .stat-grid .intel-card strong {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: clamp(2rem, 3.5vw, 2.7rem);
+      line-height: 1;
+      background: linear-gradient(90deg, #ffffff 0%, #a5f3fc 45%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(6, 182, 212, 0.25));
+    }
+
+    .stat-grid .intel-card span {
+      position: relative;
+      z-index: 1;
+      display: block;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-height: 278px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.96)),
+        linear-gradient(125deg, rgba(37, 99, 235, 0.08), transparent 38%);
+      box-shadow: 0 14px 34px rgba(7, 18, 47, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(124, 58, 237, 0.28);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(6, 182, 212, 0.08);
+    }
+
+    .feature-no {
+      position: absolute;
+      right: 18px;
+      top: 8px;
+      color: rgba(37, 99, 235, 0.08);
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .feature-icon {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 22px;
+      place-items: center;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: var(--signal-gradient);
+      background-size: 180% 180%;
+      box-shadow: 0 18px 30px rgba(37, 99, 235, 0.24);
+      animation: gradientBreath 9s ease-in-out infinite;
+    }
+
+    .feature-card h3 {
+      position: relative;
+      margin-bottom: 11px;
+      color: var(--ink);
+      font-size: 1.18rem;
+      line-height: 1.25;
+    }
+
+    .feature-card p {
+      position: relative;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.72;
+    }
+
+    main>section,
+    .site-footer {
+      position: relative;
+    }
+
+    main>section {
+      opacity: 0.98;
+    }
+
+    main>section.section-active {
+      opacity: 1;
+    }
+
+    .section-pulse {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle at var(--pulse-x, 50%) var(--pulse-y, 20%), rgba(6, 182, 212, 0.12), transparent 30%);
+    }
+
+    .dark-band {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(120deg, rgba(37, 99, 235, 0.24), transparent 42%),
+        linear-gradient(240deg, rgba(124, 58, 237, 0.18), transparent 48%),
+        linear-gradient(180deg, rgba(255, 123, 0, 0.1), transparent 64%),
+        linear-gradient(145deg, var(--midnight), var(--brand-navy), #0b244f);
+      background-size: 44px 44px, 44px 44px, auto, auto, auto;
+    }
+
+    .dark-band::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.06) 42%, transparent 68%);
+      transform: translateX(-70%);
+      animation: trustSheen 8s ease-in-out infinite;
+    }
+
+    @keyframes trustSheen {
+
+      0%,
+      45% {
+        transform: translateX(-75%);
+      }
+
+      80%,
+      100% {
+        transform: translateX(75%);
+      }
+    }
+
+    .dark-band h2,
+    .dark-band h3 {
+      color: var(--white);
+    }
+
+    .dark-band .section-head p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .trust-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(520px, 1.14fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .trust-copy {
+      max-width: 560px;
+    }
+
+    .trust-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .trust-mini {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.14);
+    }
+
+    .trust-mini b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--white);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .trust-mini span {
+      display: block;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.74rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .control-console {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.065);
+      box-shadow: var(--shadow-strong);
+      backdrop-filter: blur(22px);
+    }
+
+    .control-console::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      opacity: 0.5;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(120deg, rgba(6, 182, 212, 0.16), transparent 38%);
+      background-size: 30px 30px;
+    }
+
+    .control-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .control-top strong,
+    .control-top span {
+      display: block;
+    }
+
+    .control-top strong {
+      color: var(--white);
+      font-size: 1.08rem;
+    }
+
+    .control-top span {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.78rem;
+    }
+
+    .control-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(16, 185, 129, 0.34);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      color: #d1fae5;
+      background: rgba(16, 185, 129, 0.12);
+      font-size: 0.74rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .control-live i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.62);
+      animation: pulse 1.8s infinite;
+    }
+
+    .control-visual {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .ai-orbit-card {
+      position: relative;
+      display: grid;
+      min-height: 338px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at center, rgba(6, 182, 212, 0.18), rgba(7, 18, 47, 0.52) 68%),
+        linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(124, 58, 237, 0.12));
+    }
+
+    .ai-ring,
+    .ai-ring::before,
+    .ai-ring::after {
+      position: absolute;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 50%;
+    }
+
+    .ai-ring {
+      width: 230px;
+      height: 230px;
+      animation: slowSpin 16s linear infinite;
+    }
+
+    .ai-ring::before,
+    .ai-ring::after {
+      content: "";
+      inset: 26px;
+    }
+
+    .ai-ring::after {
+      inset: 56px;
+      border-color: rgba(255, 183, 3, 0.22);
+      animation: reverseSpin 11s linear infinite;
+    }
+
+    .ai-core {
+      position: relative;
+      display: grid;
+      width: 118px;
+      height: 118px;
+      place-items: center;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: var(--signal-gradient);
+      background-size: 180% 180%;
+      box-shadow: 0 24px 60px rgba(6, 182, 212, 0.28);
+      animation: gradientBreath 8s ease-in-out infinite;
+    }
+
+    .ai-core::before {
+      position: absolute;
+      inset: -12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: inherit;
+      content: "";
+    }
+
+    .ai-core strong {
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .orbit-node {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      color: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.72rem;
+      font-weight: 800;
+      backdrop-filter: blur(10px);
+    }
+
+    .orbit-node::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      content: "";
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.8);
+    }
+
+    .orbit-node.n1 {
+      top: 30px;
+      left: 24px;
+    }
+
+    .orbit-node.n2 {
+      top: 78px;
+      right: 20px;
+    }
+
+    .orbit-node.n3 {
+      bottom: 42px;
+      left: 34px;
+    }
+
+    .decision-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .decision-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .decision-card::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      content: "";
+      background: linear-gradient(180deg, var(--cyan), var(--blue), var(--violet));
+    }
+
+    .decision-card.warn::before {
+      background: linear-gradient(180deg, var(--gold), var(--orange));
+    }
+
+    .decision-card h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+    }
+
+    .decision-card h3 span {
+      border-radius: 999px;
+      padding: 5px 8px;
+      color: var(--ink);
+      background: var(--gold);
+      font-size: 0.64rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .decision-card p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.84rem;
+      line-height: 1.58;
+    }
+
+    .control-matrix {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .matrix-card {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .matrix-card .check {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 12px;
+      place-items: center;
+      border-radius: var(--radius);
+      color: var(--ink);
+      background: var(--gold);
+    }
+
+    .matrix-card h3 {
+      margin-bottom: 6px;
+      font-size: 0.96rem;
+    }
+
+    .matrix-card p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    @keyframes slowSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes reverseSpin {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step {
+      position: relative;
+      min-height: 248px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--white);
+      box-shadow: 0 14px 34px rgba(7, 18, 47, 0.06);
+    }
+
+    .step::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      content: "";
+      background: linear-gradient(90deg, var(--blue), var(--indigo), var(--violet), var(--orange), var(--gold));
+      background-size: 220% 100%;
+      animation: gradientBreath 8s ease-in-out infinite;
+    }
+
+    .step .step-no {
+      display: inline-flex;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      color: var(--blue);
+      background: #dbeafe;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.68;
+    }
+
+    .integrations {
+      background: var(--paper-2);
+    }
+
+    .integration-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .integration {
+      position: relative;
+      display: grid;
+      min-height: 110px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 10px;
+      background: var(--white);
+      box-shadow: 0 12px 28px rgba(7, 18, 47, 0.05);
+      color: var(--ink);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .integration small {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .split-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1fr);
+      align-items: stretch;
+      gap: 24px;
+    }
+
+    .cta-copy {
+      border-radius: var(--radius);
+      padding: 34px;
+      color: var(--white);
+      background:
+        linear-gradient(120deg, rgba(255, 123, 0, 0.16), transparent 38%),
+        linear-gradient(145deg, var(--ink), var(--brand-navy) 62%, var(--midnight));
+      box-shadow: var(--shadow);
+    }
+
+    .cta-copy h2 {
+      margin-top: 14px;
+      color: var(--white);
+    }
+
+    .cta-copy p {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.72;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .microcopy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .testimonials {
+      background: var(--white);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .review {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: #f8fbff;
+    }
+
+    .stars {
+      margin-bottom: 14px;
+      color: var(--orange);
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+    }
+
+    .review p {
+      color: var(--ink-2);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .reviewer b,
+    .reviewer small {
+      display: block;
+    }
+
+    .reviewer small {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .final-cta {
+      padding: 86px 0;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(120deg, rgba(124, 58, 237, 0.2), transparent 44%),
+        linear-gradient(260deg, rgba(255, 123, 0, 0.14), transparent 46%),
+        linear-gradient(135deg, var(--ink), var(--brand-navy) 55%, #082f49);
+      background-size: 42px 42px, 42px 42px, auto, auto, auto;
+    }
+
+    .final-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .final-box h2 {
+      margin: 0 0 12px;
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+    }
+
+    .final-box p {
+      max-width: 660px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.72;
+    }
+
+    .site-footer {
+      padding: 60px 0 30px;
+      color: rgba(255, 255, 255, 0.62);
+      background: #050816;
+    }
+
+    .disclaimer-section {
+      padding: 40px 0 60px;
+      margin: 30px 0 50px;
+    }
+
+    .disclaimer-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 30px 36px;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08), transparent 40%),
+        linear-gradient(135deg, #07122f, #0f172a);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 50px rgba(8, 40, 88, 0.16);
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .disclaimer-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .disclaimer-header {
+      margin-bottom: 8px;
+    }
+
+    .disclaimer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .disclaimer-text {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.68);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .disclaimer-action {
+      flex-shrink: 0;
+    }
+
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      text-decoration: none;
+      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #38bdf8;
+      color: #38bdf8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+    }
+
+    @media (max-width: 720px) {
+      .disclaimer-section {
+        padding: 20px 0 40px;
+        margin: 10px 0 20px;
+      }
+      .disclaimer-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 24px;
+      }
+      .disclaimer-action,
+      .btn-outline-light {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.88rem;
+    }
+
+    .footer-row a {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    @media (min-width: 768px) {
+      .footer-main {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    .footer-info h3 {
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-info p {
+      max-width: 340px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    .footer-link .icon {
+      width: 18px;
+      height: 18px;
+      color: var(--primary);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+
+    .ai-chatbot {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 90;
+      display: grid;
+      justify-items: end;
+      gap: 12px;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .chatbot-panel {
+      display: none;
+      width: min(410px, calc(100vw - 28px));
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(7, 18, 47, 0.82);
+      box-shadow: var(--shadow-strong);
+      backdrop-filter: blur(24px);
+      transform-origin: right bottom;
+    }
+
+    .chatbot-panel.is-open {
+      display: block;
+    }
+
+    .chatbot-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 14px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .chatbot-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .chatbot-title img,
+    .chatbot-title .ai-bot-icon {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 14px rgba(0, 212, 255, 0.45));
+    }
+
+    .chatbot-title strong,
+    .chatbot-title small {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .chatbot-title strong {
+      font-size: 0.94rem;
+    }
+
+    .chatbot-title small {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.72rem;
+    }
+
+    .chatbot-close,
+    .chatbot-launcher {
+      display: grid;
+      place-items: center;
+      border: 0;
+      cursor: pointer;
+      color: var(--white);
+      background: transparent;
+    }
+
+    .chatbot-close {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .chatbot-body {
+      display: grid;
+      max-height: min(520px, calc(100vh - 190px));
+      grid-template-rows: minmax(220px, 1fr) auto auto;
+    }
+
+    .chatbot-messages {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      overflow-y: auto;
+      padding: 15px;
+      scroll-behavior: smooth;
+    }
+
+    .chat-msg {
+      display: grid;
+      max-width: 88%;
+      gap: 5px;
+    }
+
+    .chat-msg.user {
+      justify-self: end;
+    }
+
+    .chat-msg.bot {
+      justify-self: start;
+    }
+
+    .chat-bubble {
+      border-radius: var(--radius);
+      padding: 11px 12px;
+      font-size: 0.86rem;
+      line-height: 1.58;
+    }
+
+    .chat-msg.bot .chat-bubble {
+      color: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .chat-msg.user .chat-bubble {
+      color: var(--white);
+      background: var(--brand-gradient);
+      box-shadow: 0 14px 26px rgba(37, 99, 235, 0.22);
+    }
+
+    .chat-bubble a {
+      color: #a7f3ff;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .chatbot-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 15px 0;
+    }
+
+    .chat-chip {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.075);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .chatbot-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 44px;
+      gap: 8px;
+      padding: 12px 15px 15px;
+    }
+
+    .chatbot-form input {
+      min-height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius);
+      padding: 11px 12px;
+      color: var(--white);
+      outline: 0;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .chatbot-form input::placeholder {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    .chatbot-form input:focus {
+      border-color: rgba(14, 165, 233, 0.72);
+      box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12);
+    }
+
+    .chatbot-form button {
+      border-radius: var(--radius);
+      background: var(--signal-gradient);
+      background-size: 180% 180%;
+      box-shadow: 0 18px 38px rgba(37, 99, 235, 0.28);
+      animation: gradientBreath 8s ease-in-out infinite;
+    }
+
+    .chatbot-form button {
+      border: 0;
+      cursor: pointer;
+      color: var(--white);
+    }
+
+    .chatbot-launcher {
+      position: relative;
+      width: 78px;
+      height: 78px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 35% 24%, rgba(255, 255, 255, 0.28), transparent 25%),
+        linear-gradient(135deg, rgba(37, 99, 235, 0.96), rgba(79, 70, 229, 0.94), rgba(124, 58, 237, 0.9));
+      box-shadow: 0 22px 50px rgba(37, 99, 235, 0.34), 0 0 0 8px rgba(6, 182, 212, 0.08);
+    }
+
+    .chatbot-launcher::after {
+      position: absolute;
+      inset: -35%;
+      content: "";
+      opacity: 0.7;
+      transform: translateX(-65%) rotate(18deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+      animation: launcherSweep 2.8s ease-in-out infinite;
+    }
+
+    .chatbot-orbit {
+      position: absolute;
+      inset: 8px;
+      z-index: 1;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 18px;
+      animation: launcherOrbit 7s linear infinite;
+    }
+
+    .chatbot-orbit::before,
+    .chatbot-orbit::after {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      content: "";
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(255, 183, 3, 0.85);
+    }
+
+    .chatbot-orbit::before {
+      top: -4px;
+      left: 18px;
+    }
+
+    .chatbot-orbit::after {
+      right: -4px;
+      bottom: 18px;
+      background: #a7f3ff;
+      box-shadow: 0 0 16px rgba(167, 243, 255, 0.85);
+    }
+
+    .chatbot-logo-wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(7, 18, 47, 0.45);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .chatbot-logo-wrap img,
+    .chatbot-logo-wrap .ai-bot-icon {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 16px rgba(0, 212, 255, 0.5));
+      transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .chatbot-launcher:hover .chatbot-logo-wrap .ai-bot-icon {
+      transform: scale(1.15) rotate(6deg);
+    }
+
+    .chatbot-badge {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      z-index: 2;
+      width: 16px;
+      height: 16px;
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    @keyframes launcherSweep {
+
+      0%,
+      45% {
+        transform: translateX(-75%) rotate(18deg);
+      }
+
+      80%,
+      100% {
+        transform: translateX(75%) rotate(18deg);
+      }
+    }
+
+    @keyframes launcherOrbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 1050px) {
+
+      .hero-grid,
+      .trust-grid,
+      .split-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-copy {
+        max-width: none;
+      }
+
+      .hero-grid {
+        gap: 34px;
+      }
+
+      .stat-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .feature-grid,
+      .review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .integration-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .final-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      html {
+        scroll-padding-top: 100px;
+      }
+
+      :root {
+        --wrap: min(100% - 28px, 1180px);
+      }
+
+      .site-header {
+        top: 10px;
+        min-height: 80px;
+      }
+
+      .nav {
+        min-height: 80px;
+        padding: 8px 14px;
+      }
+
+      .brand img {
+        width: 136px;
+        height: 68px;
+        transform: scaleX(1.12);
+      }
+
+      .ai-chatbot {
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .chatbot-launcher {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+      }
+
+      .chatbot-orbit {
+        inset: 6px;
+        border-radius: 13px;
+      }
+
+      .chatbot-logo-wrap {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+      }
+
+      .chatbot-logo-wrap img,
+      .chatbot-logo-wrap .ai-bot-icon,
+      .chatbot-title .ai-bot-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 140px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.42rem, 11vw, 3.45rem);
+      }
+
+      .hero-grid,
+      .hero-panel,
+      .console,
+      .section-head,
+      .footer-row {
+        min-width: 0;
+      }
+
+      .console-top,
+      .prompt-console-top,
+      .section-head,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .metric-row,
+      .task-grid,
+      .hero-intel-strip,
+      .hero-form .two,
+      .trust-mini-grid,
+      .control-visual,
+      .control-matrix,
+      .stat-grid,
+      .feature-grid,
+      .process-grid,
+      .integration-grid,
+      .review-grid,
+      .contact-form .two {
+        grid-template-columns: 1fr;
+      }
+
+      .automation-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .automation-strip span:nth-child(2) {
+        border-right: 0;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .stats {
+        padding-top: 60px;
+        padding-bottom: 70px;
+        margin-top: 30px;
+      }
+
+      .split-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-copy,
+      .contact-form {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="https://jzarrtech.com/" aria-label="JzarrTech home">
+        <img src="logo.png" alt="JzarrTech logo">
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="ai-bg" id="aiBg" aria-hidden="true">
+        <div class="ai-grid"></div>
+        <div class="neural-field" id="neuralField"></div>
+        <div class="hero-scan"></div>
+      </div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <!-- Live AI Prompting Console Header -->
+          <div class="ai-prompt-console" id="aiPromptConsole" aria-label="Interactive AI Agent Prompting Console">
+            <div class="prompt-console-top">
+              <div class="prompt-window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="prompt-model-tag">
+                <span class="model-icon">🤖</span>
+                <span class="model-name">JZARR_AI // PROMPT_MODE</span>
+                <span class="model-pulse"></span>
+              </div>
+              <div class="prompt-latency" id="promptLatency">⚡ 14ms</div>
+            </div>
+            <div class="prompt-console-body">
+              <div class="prompt-line">
+                <span class="prompt-symbol">❯</span>
+                <span class="prompt-keyword">prompt</span>
+                <span class="prompt-flag">--agent</span>
+                <span class="prompt-string" id="promptCommandText">"Deploy AI Agent for Business Automation"</span>
+                <span class="prompt-inline-cursor">❚</span>
+              </div>
+            </div>
+            <div class="prompt-status-strip">
+              <span class="status-pill" id="promptStatusText">✨ Status: Generating Autonomous Workflow...</span>
+            </div>
+          </div>
+
+          <!-- Main Dynamic Prompt Heading -->
+          <h1 class="ai-interactive-heading">
+            AI Agent Bot for <br>
+            <span class="gradient-text js-ai-heading-target">Business Automation.</span><span class="ai-cursor">❚</span>
+          </h1>
+
+          <!-- Interactive Quick Prompt Selector -->
+          <div class="prompt-selector-pills" aria-label="Click to prompt AI Agent">
+            <span class="selector-label">✨ Prompt AI:</span>
+            <button type="button" class="prompt-pill active">⚡ Business Automation</button>
+            <button type="button" class="prompt-pill">🎯 Lead Qualification</button>
+            <button type="button" class="prompt-pill">📊 CRM Workflows</button>
+            <button type="button" class="prompt-pill">💬 24/7 Customer Support</button>
+            <button type="button" class="prompt-pill">💰 Finance & Ops</button>
+            <button type="button" class="prompt-pill">🔄 WhatsApp & Web Routing</button>
+          </div>
+
+          <p class="hero-lead">JzarrTech builds intelligent automation agents for support, lead qualification,
+            follow-ups, finance tasks, CRM updates, and operational workflows, shaped for teams that need speed with
+            control.</p>
+        </div>
+
+        <div class="hero-panel reveal" aria-label="AI automation consultation form">
+          <form class="hero-form js-lead-form">
+            <h3>Free AI Consultation</h3>
+            <p>Tell us what you want to automate. Our team will map the right AI Agent Bot workflow for your business.
+            </p>
+            <div class="two">
+              <div class="hero-field">
+                <label for="hero-name">Full Name</label>
+                <input id="hero-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+              </div>
+              <div class="hero-field">
+                <label for="hero-phone">Phone</label>
+                <input id="hero-phone" name="phone" type="tel" placeholder="03xx-xxxxxxx" autocomplete="tel">
+              </div>
+            </div>
+            <div class="two">
+              <div class="hero-field">
+                <label for="hero-email">Email</label>
+                <input id="hero-email" name="email" type="email" placeholder="you@example.com" autocomplete="email"
+                  required>
+              </div>
+              <div class="hero-field">
+                <label for="hero-service">Service</label>
+                <select id="hero-service" name="service" required>
+                  <option value="">Select one</option>
+                  <option>AI Agent Bot</option>
+                  <option>AI Chatbot</option>
+                  <option>WhatsApp Automation</option>
+                  <option>CRM Automation</option>
+                  <option>Finance Workflow Automation</option>
+                </select>
+              </div>
+            </div>
+            <div class="hero-field">
+              <label for="hero-message">Message</label>
+              <textarea id="hero-message" name="message"
+                placeholder="Briefly, what process should the AI agent automate?" required></textarea>
+            </div>
+            <div class="form-terms-wrap">
+              <label class="terms-label">
+                <input type="checkbox" id="hero-agreement" name="agreement" value="Agreed to Terms, Privacy Policy & Disclaimer" required>
+                <span class="custom-checkbox" aria-hidden="true">
+                  <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="terms-text">
+                  I agree to the <a href="https://jzarrtech.com/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>, <a href="https://jzarrtech.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, and <a href="https://jzarrtech.com/disclaimer" target="_blank" rel="noopener noreferrer">Disclaimer</a>.
+                </span>
+              </label>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                aria-hidden="true">
+                <path d="m22 2-7 20-4-9-9-4Z" />
+                <path d="M22 2 11 13" />
+              </svg>
+              Request Free Callback
+            </button>
+            <p class="hero-note">Your inquiry will be sent securely to our team for an immediate response.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats dark-band">
+      <div class="wrap stat-grid">
+        <div class="intel-card stat reveal">
+          <small>Always On</small>
+          <b>24/7</b>
+          <span>Automated support and routing for customers after business hours.</span>
+          <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="intel-card stat reveal">
+          <small>Unified Layer</small>
+          <b>1</b>
+          <span>Unified agent layer across website, WhatsApp, CRM, and internal tools.</span>
+          <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="intel-card stat reveal">
+          <small>Response Speed</small>
+          <b>5x</b>
+          <span>Faster first-response workflows for repetitive customer questions.</span>
+          <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="intel-card stat reveal">
+          <small>Human Gate</small>
+          <b>100%</b>
+          <span>Human review paths for sensitive finance or policy decisions.</span>
+          <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <div class="eyebrow">AI Features</div>
+          <h2>Automation that feels sharp, controlled, and business-ready.</h2>
+          <p>From customer conversations to back-office workflows, your agent is designed around the tasks that slow
+            your team down every day.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span class="feature-no">01</span>
+            <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+              </svg></div>
+            <h3>AI Chatbots</h3>
+            <p>Answer FAQs, explain services, capture details, and guide users toward bookings without making your team
+              repeat the same replies.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">02</span>
+            <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <path d="M3 3v18h18" />
+                <path d="m7 15 4-4 3 3 6-8" />
+              </svg></div>
+            <h3>Lead Qualification</h3>
+            <p>Score prospects, ask smart follow-up questions, detect intent, and send high-value leads to the right
+              pipeline instantly.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">03</span>
+            <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <path d="M4 4h16v12H5.17L4 17.17z" />
+                <path d="M8 9h8" />
+                <path d="M8 13h5" />
+              </svg></div>
+            <h3>WhatsApp and CRM Automation</h3>
+            <p>Connect customer messages with follow-ups, appointment reminders, deal stages, notes, and team
+              notifications.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">04</span>
+            <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <path d="M12 1v22" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg></div>
+            <h3>Finance Workflow Assistants</h3>
+            <p>Prepare invoice reminders, summarize payment conversations, flag missing documents, and route finance
+              tasks for approval.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">05</span>
+            <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+                <path d="M9 15h6" />
+                <path d="M9 11h2" />
+              </svg></div>
+            <h3>Knowledge Base Search</h3>
+            <p>Train your agent on your service pages, policies, FAQs, SOPs, and internal documents so answers stay
+              closer to your real business.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">06</span>
+            <div class="feature-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" aria-hidden="true">
+                <path d="M12 20V10" />
+                <path d="M18 20V4" />
+                <path d="M6 20v-6" />
+              </svg></div>
+            <h3>Agent Analytics</h3>
+            <p>Track conversations, missed intents, automation savings, conversion paths, and handoff quality from a
+              practical reporting view.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-band" id="trust">
+      <div class="wrap trust-grid">
+        <div class="section-head trust-copy reveal">
+          <div>
+            <div class="eyebrow">Control Architecture</div>
+            <h2>Automation with approval, visibility, and clean handoffs.</h2>
+            <p>Move fast without letting the bot freestyle sensitive decisions. Your AI agent can classify intent, check
+              risk, assign the right owner, and pause for human review when the conversation needs judgment.</p>
+            <div class="trust-mini-grid">
+              <div class="trust-mini"><b>0</b><span>Blind approvals on sensitive workflows</span></div>
+              <div class="trust-mini"><b>24/7</b><span>Conversation capture and routing</span></div>
+              <div class="trust-mini"><b>100%</b><span>Readable handoff trail for teams</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="control-console reveal" aria-label="AI control architecture preview">
+          <div class="control-top">
+            <div>
+              <strong>AI Control Console</strong>
+              <span>Intent, risk, approval, and owner routing</span>
+            </div>
+            <div class="control-live"><i></i> Guardrails live</div>
+          </div>
+          <div class="control-visual">
+            <div class="ai-orbit-card">
+              <div class="ai-ring"></div>
+              <div class="orbit-node n1">Verify</div>
+              <div class="orbit-node n2">Score</div>
+              <div class="orbit-node n3">Escalate</div>
+              <div class="ai-core"><strong>AI</strong></div>
+            </div>
+            <div class="decision-stack">
+              <article class="decision-card">
+                <h3>Identity check <span>Pass</span></h3>
+                <p>Known lead, clean source, complete contact details, and CRM match ready.</p>
+              </article>
+              <article class="decision-card">
+                <h3>Intent score <span>High</span></h3>
+                <p>Customer wants pricing, timeline, and workflow automation consultation.</p>
+              </article>
+              <article class="decision-card warn">
+                <h3>Risk gate <span>Review</span></h3>
+                <p>Finance, legal, refund, and policy-sensitive messages pause for human approval.</p>
+              </article>
+            </div>
+          </div>
+          <div class="control-matrix">
+            <article class="matrix-card">
+              <span class="check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path d="m20 6-11 11-5-5" />
+                </svg></span>
+              <h3>Approval gates</h3>
+              <p>Sensitive replies wait for your team before they are sent.</p>
+            </article>
+            <article class="matrix-card">
+              <span class="check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path d="m20 6-11 11-5-5" />
+                </svg></span>
+              <h3>Activity trail</h3>
+              <p>Readable logs for requests, decisions, triggers, and handoffs.</p>
+            </article>
+            <article class="matrix-card">
+              <span class="check"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" aria-hidden="true">
+                  <path d="m20 6-11 11-5-5" />
+                </svg></span>
+              <h3>Owner routing</h3>
+              <p>Sales, support, finance, and operations get the right tasks.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <div class="eyebrow">How It Works</div>
+          <h2>Four steps from repetitive work to intelligent automation.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="step reveal">
+            <span class="step-no">Step 01</span>
+            <h3>Map Your Workflow</h3>
+            <p>We identify repetitive conversations, manual routing, data entry, document requests, and decision points.
+            </p>
+          </article>
+          <article class="step reveal">
+            <span class="step-no">Step 02</span>
+            <h3>Train the Agent</h3>
+            <p>Your agent is shaped around your services, tone, FAQs, SOPs, offers, and escalation rules.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-no">Step 03</span>
+            <h3>Connect Your Tools</h3>
+            <p>We integrate with website forms, WhatsApp flows, CRM stages, email alerts, spreadsheets, and dashboards.
+            </p>
+          </article>
+          <article class="step reveal">
+            <span class="step-no">Step 04</span>
+            <h3>Launch and Optimize</h3>
+            <p>We monitor conversations, improve prompts, tighten controls, and expand automation as your team learns.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section integrations">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Integrations</div>
+            <h2>Connect the agent to the tools your team already uses.</h2>
+          </div>
+          <p>Start with one high-friction workflow, then expand into sales, support, operations, and finance when the
+            foundation is working.</p>
+        </div>
+        <div class="integration-grid">
+          <div class="integration reveal">Website<small>Chat and forms</small></div>
+          <div class="integration reveal">WhatsApp<small>Replies and routing</small></div>
+          <div class="integration reveal">CRM<small>Leads and stages</small></div>
+          <div class="integration reveal">Email<small>Alerts and summaries</small></div>
+          <div class="integration reveal">Sheets<small>Logs and reporting</small></div>
+          <div class="integration reveal">Dashboards<small>Metrics and control</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="consult">
+      <div class="wrap split-cta">
+        <div class="cta-copy reveal">
+          <div class="eyebrow">Let's Automate</div>
+          <h2>Book your AI Agent Bot consultation.</h2>
+          <p>Share your workflow and we will map where an AI agent can save time, improve customer response, and support
+            your team without losing oversight.</p>
+          <a class="btn btn-primary" href="mailto:hello@jzarrtech.com?subject=AI%20Agent%20Bot%20Consultation">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              aria-hidden="true">
+              <path d="M4 4h16v16H4z" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            hello@jzarrtech.com
+          </a>
+        </div>
+        <form class="contact-form reveal js-lead-form">
+          <div class="two">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Business name">
+            </div>
+            <div class="field">
+              <label for="priority">Automation Priority</label>
+              <select id="priority" name="priority" required>
+                <option value="">Select one</option>
+                <option>Customer support</option>
+                <option>Lead generation</option>
+                <option>Finance workflows</option>
+                <option>CRM automation</option>
+                <option>Internal operations</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">What should the agent automate?</label>
+            <textarea id="message" name="message"
+              placeholder="Tell us about the repetitive workflow, channels, and tools involved." required></textarea>
+          </div>
+          <div class="form-terms-wrap">
+            <label class="terms-label">
+              <input type="checkbox" id="contact-agreement" name="agreement" value="Agreed to Terms, Privacy Policy & Disclaimer" required>
+              <span class="custom-checkbox" aria-hidden="true">
+                <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="terms-text">
+                I agree to the <a href="https://jzarrtech.com/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>, <a href="https://jzarrtech.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, and <a href="https://jzarrtech.com/disclaimer" target="_blank" rel="noopener noreferrer">Disclaimer</a>.
+              </span>
+            </label>
+          </div>
+          <button class="btn btn-dark" type="submit">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              aria-hidden="true">
+              <path d="m22 2-7 20-4-9-9-4Z" />
+              <path d="M22 2 11 13" />
+            </svg>
+            Request Free Consultation
+          </button>
+          <p class="microcopy">Your inquiry will be sent securely to our team for an immediate response.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <div class="eyebrow">Client Words</div>
+          <h2>Made for founders, operators, and teams that move fast.</h2>
+        </div>
+        <div class="review-grid">
+          <article class="review reveal">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"The automation flow gave our sales team faster lead context and removed a lot of manual follow-up work."
+            </p>
+            <div class="reviewer">
+              <div class="avatar">AR</div>
+              <div><b>Ahmed R.</b><small>Business Owner</small></div>
+            </div>
+          </article>
+          <article class="review reveal">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"We wanted an AI bot that sounded professional and still escalated important cases. The workflow planning
+              was clear."</p>
+            <div class="reviewer">
+              <div class="avatar">SK</div>
+              <div><b>Sara K.</b><small>Operations Lead</small></div>
+            </div>
+          </article>
+          <article class="review reveal">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"The team connected support questions with CRM updates so our agents could focus on real customer
+              issues."</p>
+            <div class="reviewer">
+              <div class="avatar">HM</div>
+              <div><b>Hamza M.</b><small>Service Founder</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="disclaimer-section reveal" aria-label="Legal Disclaimer">
+      <div class="wrap disclaimer-box">
+        <div class="disclaimer-content">
+          <div class="disclaimer-header">
+            <span class="disclaimer-badge">⚠️ Legal Disclaimer</span>
+          </div>
+          <p class="disclaimer-text">
+            Welcome to JzarrTech. This Disclaimer applies to the website https://jzarrtech.com/ and to the information, content, materials, service descriptions, digital resources, forms, communications, consultations, proposals, quotations, project discussions, reports, strategies, designs, software-related deliverables, marketing recommendations, AI-related solutions, eCommerce support, registration assistance, and any other services provided or displayed by JzarrTech through this website or through its official communication channels.
+          </p>
+        </div>
+        <div class="disclaimer-action">
+          <a class="btn-outline-light" href="https://jzarrtech.com/disclaimer" target="_blank" rel="noopener noreferrer">
+            See More
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-box reveal">
+        <div>
+          <h2>Turn repetitive work into a managed AI workflow.</h2>
+          <p>Start with one automation: support, lead qualification, finance reminders, or CRM routing. JzarrTech can
+            help you design, launch, and improve it.</p>
+        </div>
+        <a class="btn btn-primary" href="#consult">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m13 6 6 6-6 6" />
+          </svg>
+          Start Project
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div class="footer-info">
+        <h3>JzarrTech</h3>
+        <p>C, 10 Rashid Minhas Rd, Block 10-A Block 10 A Gulshan-e-Iqbal, Karachi, 75300, Pakistan</p>
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:hello@jzarrtech.com" class="footer-link">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          hello@jzarrtech.com
+        </a>
+        <a href="tel:+922136271630" class="footer-link">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          (021) 36271630
+        </a>
+      </div>
+    </div>
+    <div class="wrap footer-row">
+      <span>&copy; <span id="year"></span> JzarrTech. All rights reserved.</span>
+    </div>
+  </footer>
+
+
+
+  <section class="ai-chatbot" aria-label="JzarrTech AI chatbot">
+    <div class="chatbot-panel" id="chatbotPanel" aria-hidden="true">
+      <div class="chatbot-head">
+        <div class="chatbot-title">
+          <svg class="ai-bot-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="aiBotGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="50%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#a855f7"/>
+              </linearGradient>
+            </defs>
+            <circle cx="12" cy="3" r="2" fill="url(#aiBotGrad)"/>
+            <path d="M12 5v2" stroke="url(#aiBotGrad)" stroke-width="2" stroke-linecap="round"/>
+            <rect x="4" y="7" width="16" height="13" rx="4" fill="url(#aiBotGrad)" fill-opacity="0.15" stroke="url(#aiBotGrad)" stroke-width="2"/>
+            <circle cx="9" cy="13" r="1.5" fill="url(#aiBotGrad)"/>
+            <circle cx="15" cy="13" r="1.5" fill="url(#aiBotGrad)"/>
+            <path d="M10 16.5h4" stroke="url(#aiBotGrad)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M2 11v4M22 11v4" stroke="url(#aiBotGrad)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <strong>Jzarr AI Assistant</strong>
+            <small>Answers from this landing page and JzarrTech services</small>
+          </div>
+        </div>
+        <button class="chatbot-close" id="chatbotClose" type="button" aria-label="Close chatbot">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="chatbot-body">
+        <div class="chatbot-messages" id="chatMessages" aria-live="polite"></div>
+        <div class="chatbot-suggestions" id="chatSuggestions" aria-label="Suggested questions"></div>
+        <form class="chatbot-form" id="chatForm">
+          <input id="chatInput" type="text" autocomplete="off" placeholder="Ask about AI agents, pricing, services...">
+          <button type="submit" aria-label="Send message">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              aria-hidden="true">
+              <path d="m22 2-7 20-4-9-9-4Z" />
+              <path d="M22 2 11 13" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <button class="chatbot-launcher magnetic" id="chatbotLauncher" type="button" aria-label="Open Jzarr AI Assistant"
+      aria-expanded="false">
+      <span class="chatbot-badge" aria-hidden="true"></span>
+      <span class="chatbot-orbit" aria-hidden="true"></span>
+      <span class="chatbot-logo-wrap" aria-hidden="true">
+        <svg class="ai-bot-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="aiBotGradLaunch" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="50%" stop-color="#2563eb"/>
+              <stop offset="100%" stop-color="#a855f7"/>
+            </linearGradient>
+          </defs>
+          <circle cx="12" cy="3" r="2" fill="url(#aiBotGradLaunch)"/>
+          <path d="M12 5v2" stroke="url(#aiBotGradLaunch)" stroke-width="2" stroke-linecap="round"/>
+          <rect x="4" y="7" width="16" height="13" rx="4" fill="url(#aiBotGradLaunch)" fill-opacity="0.15" stroke="url(#aiBotGradLaunch)" stroke-width="2"/>
+          <circle cx="9" cy="13" r="1.5" fill="url(#aiBotGradLaunch)"/>
+          <circle cx="15" cy="13" r="1.5" fill="url(#aiBotGradLaunch)"/>
+          <path d="M10 16.5h4" stroke="url(#aiBotGradLaunch)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M2 11v4M22 11v4" stroke="url(#aiBotGradLaunch)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script>
+    const year = document.getElementById("year");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const canAnime = typeof window.anime === "function" && !prefersReducedMotion;
+    const neuralField = document.getElementById("neuralField");
+    year.textContent = new Date().getFullYear();
+
+    function runAnime(options) {
+      if (canAnime) {
+        window.anime(options);
+      }
+    }
+
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createMotionElement(className, styles, text = "") {
+      const element = document.createElement("span");
+      element.className = className;
+      if (text) element.textContent = text;
+      Object.entries(styles).forEach(([name, value]) => element.style.setProperty(name, value));
+      return element;
+    }
+
+    function buildAIMotionField() {
+      if (!neuralField || prefersReducedMotion) return;
+
+      neuralField.textContent = "";
+      const fragment = document.createDocumentFragment();
+      const palette = [
+        "rgba(8, 40, 88, 0.9)",
+        "rgba(24, 88, 168, 0.88)",
+        "rgba(37, 99, 235, 0.88)",
+        "rgba(6, 182, 212, 0.82)",
+        "rgba(124, 58, 237, 0.78)",
+        "rgba(139, 92, 246, 0.76)",
+        "rgba(255, 123, 0, 0.72)",
+        "rgba(255, 183, 3, 0.68)"
+      ];
+      const dataBits = ["01", "10", "AI", "API", "BOT", "CRM", "LLM", "SYNC", "NLP", "AUTO"];
+
+      for (let index = 0; index < 180; index += 1) {
+        const opacity = randomBetween(0.22, 0.74);
+        fragment.appendChild(createMotionElement("ai-particle", {
+          "--x": `${randomBetween(0, 100).toFixed(2)}%`,
+          "--y": `${randomBetween(0, 100).toFixed(2)}%`,
+          "--s": `${randomBetween(2, 5.8).toFixed(2)}px`,
+          "--c": palette[index % palette.length],
+          "--o": opacity.toFixed(2),
+          "--o-low": Math.max(0.05, opacity * 0.34).toFixed(2),
+          "--d": `${randomBetween(5.5, 16).toFixed(2)}s`,
+          "--blink": `${randomBetween(2.8, 7.5).toFixed(2)}s`,
+          "--delay": `-${randomBetween(0, 16).toFixed(2)}s`,
+          "--tx": `${randomBetween(-70, 70).toFixed(2)}px`,
+          "--ty": `${randomBetween(-58, 58).toFixed(2)}px`,
+          "--scale": randomBetween(0.72, 1.42).toFixed(2)
+        }));
+      }
+
+      for (let index = 0; index < 54; index += 1) {
+        fragment.appendChild(createMotionElement("neural-node", {
+          "--x": `${randomBetween(4, 96).toFixed(2)}%`,
+          "--y": `${randomBetween(8, 92).toFixed(2)}%`,
+          "--s": `${randomBetween(4.5, 11).toFixed(2)}px`,
+          "--c": palette[(index + 2) % palette.length],
+          "--d": `${randomBetween(4.8, 12).toFixed(2)}s`,
+          "--delay": `-${randomBetween(0, 12).toFixed(2)}s`,
+          "--tx": `${randomBetween(-22, 22).toFixed(2)}px`,
+          "--ty": `${randomBetween(-18, 18).toFixed(2)}px`
+        }));
+      }
+
+      for (let index = 0; index < 76; index += 1) {
+        fragment.appendChild(createMotionElement("neural-link", {
+          "--x": `${randomBetween(-8, 98).toFixed(2)}%`,
+          "--y": `${randomBetween(4, 96).toFixed(2)}%`,
+          "--w": `${randomBetween(70, 250).toFixed(2)}px`,
+          "--r": `${randomBetween(0, 360).toFixed(2)}deg`,
+          "--c": palette[(index + 4) % palette.length],
+          "--d": `${randomBetween(3.6, 10.5).toFixed(2)}s`,
+          "--delay": `-${randomBetween(0, 10).toFixed(2)}s`
+        }));
+      }
+
+      for (let index = 0; index < 92; index += 1) {
+        fragment.appendChild(createMotionElement("data-bit", {
+          "--x": `${randomBetween(0, 100).toFixed(2)}%`,
+          "--y": `${randomBetween(-15, 70).toFixed(2)}%`,
+          "--fs": `${randomBetween(0.56, 0.94).toFixed(2)}rem`,
+          "--o": randomBetween(0.12, 0.34).toFixed(2),
+          "--d": `${randomBetween(8, 22).toFixed(2)}s`,
+          "--delay": `-${randomBetween(0, 22).toFixed(2)}s`,
+          "--tx": `${randomBetween(-38, 38).toFixed(2)}px`
+        }, dataBits[index % dataBits.length]));
+      }
+
+      neuralField.appendChild(fragment);
+    }
+
+    buildAIMotionField();
+
+    function attachPointerGlow(elements) {
+      elements.forEach((element) => {
+        element.addEventListener("mousemove", (event) => {
+          if (prefersReducedMotion || window.innerWidth < 780) return;
+          const box = element.getBoundingClientRect();
+          const x = ((event.clientX - box.left) / box.width) * 100;
+          const y = ((event.clientY - box.top) / box.height) * 100;
+          element.style.setProperty("--mx", `${x.toFixed(2)}%`);
+          element.style.setProperty("--my", `${y.toFixed(2)}%`);
+        });
+      });
+    }
+
+    attachPointerGlow(document.querySelectorAll(".hero-panel, .control-console, .contact-form, .chatbot-panel"));
+
+    const aiBg = document.getElementById("aiBg");
+    let aiPointerFrame = 0;
+    window.addEventListener("pointermove", (event) => {
+      if (!aiBg || prefersReducedMotion || window.innerWidth < 780 || aiPointerFrame) return;
+      aiPointerFrame = window.requestAnimationFrame(() => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 18;
+        const y = (event.clientY / window.innerHeight - 0.5) * 14;
+        aiBg.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
+        aiPointerFrame = 0;
+      });
+    });
+
+    function sweepGlass(target) {
+      if (!target || prefersReducedMotion) return;
+      target.classList.remove("glass-sweep");
+      void target.offsetWidth;
+      target.classList.add("glass-sweep");
+      window.setTimeout(() => target.classList.remove("glass-sweep"), 1250);
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          runAnime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [26, 0],
+            duration: 700,
+            easing: "easeOutCubic"
+          });
+          sweepGlass(entry.target);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+
+    document.querySelectorAll("main > section").forEach((section) => {
+      if (!section.querySelector(".section-pulse")) {
+        const pulse = document.createElement("span");
+        pulse.className = "section-pulse";
+        pulse.setAttribute("aria-hidden", "true");
+        section.prepend(pulse);
+      }
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const section = entry.target;
+        section.classList.add("section-active");
+        const pulse = section.querySelector(".section-pulse");
+        if (pulse) {
+          runAnime({
+            targets: pulse,
+            opacity: [0, 1, 0],
+            scale: [0.94, 1.04],
+            duration: 1200,
+            easing: "easeOutCubic"
+          });
+        }
+        runAnime({
+          targets: section.querySelectorAll(".wrap > *, .feature-card, .step, .integration, .review, .matrix-card, .decision-card"),
+          opacity: [0.92, 1],
+          translateY: [12, 0],
+          delay: window.anime ? window.anime.stagger(45) : 0,
+          duration: 620,
+          easing: "easeOutCubic"
+        });
+        sectionObserver.unobserve(section);
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll("main > section").forEach((section) => sectionObserver.observe(section));
+
+    runAnime({
+      targets: ".site-header",
+      opacity: [0, 1],
+      duration: 700,
+      easing: "easeOutExpo"
+    });
+
+    runAnime({
+      targets: ".nav",
+      translateY: [-28, 0],
+      duration: 900,
+      easing: "easeOutExpo"
+    });
+
+    runAnime({
+      targets: ".hero-copy > *",
+      opacity: [0, 1],
+      translateY: [34, 0],
+      delay: window.anime ? window.anime.stagger(95, { start: 180 }) : 0,
+      duration: 850,
+      easing: "easeOutCubic"
+    });
+
+    runAnime({
+      targets: ".hero-panel",
+      opacity: [0, 1],
+      translateX: [44, 0],
+      scale: [0.96, 1],
+      duration: 950,
+      delay: 280,
+      easing: "easeOutExpo"
+    });
+
+    runAnime({
+      targets: ".brand",
+      translateY: [0, -5, 0],
+      duration: 4200,
+      easing: "easeInOutSine",
+      loop: true
+    });
+
+    runAnime({
+      targets: ".chatbot-launcher",
+      scale: [0.82, 1],
+      rotate: [-8, 0],
+      duration: 700,
+      delay: 900,
+      easing: "easeOutBack"
+    });
+
+    runAnime({
+      targets: ".ai-core",
+      scale: [1, 1.06, 1],
+      boxShadow: [
+        "0 24px 60px rgba(6, 182, 212, 0.28)",
+        "0 30px 74px rgba(6, 182, 212, 0.42)",
+        "0 24px 60px rgba(6, 182, 212, 0.28)"
+      ],
+      duration: 2600,
+      easing: "easeInOutSine",
+      loop: true
+    });
+
+    runAnime({
+      targets: ".orbit-node",
+      translateY: [0, -8, 0],
+      delay: window.anime ? window.anime.stagger(260) : 0,
+      duration: 3100,
+      easing: "easeInOutSine",
+      loop: true
+    });
+
+    const glassTargets = document.querySelectorAll(".site-header, .hero-panel, .stat, .feature-card, .control-console, .decision-card, .matrix-card, .step, .integration, .review, .contact-form");
+    glassTargets.forEach((target, index) => {
+      target.addEventListener("mouseenter", () => sweepGlass(target));
+      if (index < 8) {
+        window.setTimeout(() => sweepGlass(target), 900 + index * 160);
+      }
+    });
+
+    const tiltTargets = document.querySelectorAll(".hero-panel, .feature-card, .control-console, .decision-card, .matrix-card, .stat, .step, .integration, .review, .contact-form");
+    tiltTargets.forEach((card) => {
+      card.classList.add("js-tilt");
+      card.addEventListener("mousemove", (event) => {
+        if (prefersReducedMotion || window.innerWidth < 780) return;
+        const box = card.getBoundingClientRect();
+        const x = event.clientX - box.left;
+        const y = event.clientY - box.top;
+        const rotateY = ((x / box.width) - 0.5) * 8;
+        const rotateX = ((0.5 - y / box.height) * 8);
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        if (canAnime) {
+          window.anime({
+            targets: card,
+            rotateX: 0,
+            rotateY: 0,
+            translateY: 0,
+            duration: 520,
+            easing: "easeOutElastic(1, .55)"
+          });
+        } else {
+          card.style.transform = "";
+        }
+      });
+    });
+
+    function attachMagnetic(elements) {
+      elements.forEach((button) => {
+        if (button.dataset.magneticReady) return;
+        button.dataset.magneticReady = "true";
+        button.classList.add("magnetic");
+        button.addEventListener("mousemove", (event) => {
+          if (prefersReducedMotion || window.innerWidth < 780) return;
+          const box = button.getBoundingClientRect();
+          const x = (event.clientX - box.left - box.width / 2) * 0.18;
+          const y = (event.clientY - box.top - box.height / 2) * 0.18;
+          button.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        button.addEventListener("mouseleave", () => {
+          if (canAnime) {
+            window.anime({
+              targets: button,
+              translateX: 0,
+              translateY: 0,
+              duration: 450,
+              easing: "easeOutElastic(1, .6)"
+            });
+          } else {
+            button.style.transform = "";
+          }
+        });
+      });
+    }
+
+    attachMagnetic(document.querySelectorAll(".chatbot-launcher"));
+
+    const numberObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const number = entry.target.querySelector("b");
+        const value = number ? number.textContent.trim() : "";
+        const match = value.match(/^(\+?)(\d+)([a-z%]*)$/i);
+        if (match && canAnime) {
+          const prefix = match[1];
+          const target = Number(match[2]);
+          const suffix = match[3];
+          const state = { value: 0 };
+          window.anime({
+            targets: state,
+            value: target,
+            round: 1,
+            duration: 1250,
+            easing: "easeOutCubic",
+            update: () => {
+              number.textContent = `${prefix}${state.value}${suffix}`;
+            }
+          });
+        }
+        numberObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll(".stat").forEach((stat) => numberObserver.observe(stat));
+
+    document.querySelectorAll("input, select, textarea").forEach((field) => {
+      field.addEventListener("focus", () => {
+        runAnime({
+          targets: field,
+          scale: [1, 1.015],
+          duration: 260,
+          easing: "easeOutCubic"
+        });
+      });
+      field.addEventListener("blur", () => {
+        runAnime({
+          targets: field,
+          scale: 1,
+          duration: 260,
+          easing: "easeOutCubic"
+        });
+      });
+    });
+
+
+
+    document.querySelectorAll(".js-lead-form").forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const submitBtn = form.querySelector("button[type='submit']");
+        const originalText = submitBtn ? submitBtn.innerHTML : "";
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = "Sending...";
+        }
+
+        try {
+          const data = new FormData(form);
+          data.append("form_type", "AI Agent Bot Consultation Request");
+
+          const response = await fetch("send_mail.php", {
+            method: "POST",
+            body: data
+          });
+
+          const result = await response.json().catch(() => ({ status: "error" }));
+
+          if (response.ok && result.status === "success") {
+            window.location.href = "https://jzarrtech.com/thank-you";
+          } else {
+            alert(result.message || "Failed to send message. Please try again.");
+          }
+        } catch (error) {
+          alert("An error occurred while sending your request: " + error.message + ". Are you viewing this via file:// protocol? PHP needs a server.");
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        }
+      });
+    });
+
+    const chatPanel = document.getElementById("chatbotPanel");
+    const chatLauncher = document.getElementById("chatbotLauncher");
+    const chatClose = document.getElementById("chatbotClose");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatSuggestions = document.getElementById("chatSuggestions");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+
+    const quickPrompts = [
+      "What can the AI Agent Bot automate?",
+      "What JzarrTech services do you offer?",
+      "How does the process work?",
+      "Is pricing fixed or custom?",
+      "Can it connect with WhatsApp and CRM?"
+    ];
+
+    const botKnowledge = [
+      {
+        title: "AI Agent Bot",
+        keywords: ["ai", "agent", "bot", "chatbot", "automate", "automation", "business", "support", "customer"],
+        answer: "The AI Agent Bot is built to automate customer support, lead qualification, FAQs, follow-ups, CRM routing, document requests, finance reminders, and internal operations. On this landing page, the main promise is simple: automate repetitive business work while keeping human approval for sensitive cases."
+      },
+      {
+        title: "AI features",
+        keywords: ["feature", "features", "chat", "lead", "analytics", "knowledge", "base", "whatsapp", "crm"],
+        answer: "Key AI features include website chat, WhatsApp automation, CRM routing, lead scoring, knowledge-base search, finance workflow assistance, agent analytics, and human handoff rules. The agent can capture, classify, automate, and report on customer conversations."
+      },
+      {
+        title: "JzarrTech services",
+        keywords: ["services", "jzarrtech", "website", "seo", "ecommerce", "mobile", "api", "graphics", "it", "development"],
+        answer: "JzarrTech services include AI Agents, custom websites, ecommerce solutions, mobile apps, SEO, API integrations, graphics, IT services, and digital consultation. The live JzarrTech site also positions the company as a digital agency for growth-focused brands."
+      },
+      {
+        title: "Process",
+        keywords: ["process", "steps", "start", "workflow", "launch", "train", "integrate", "connect"],
+        answer: "The process has four steps: map your workflow, train the agent on your business knowledge, connect tools like website forms, WhatsApp, CRM, email and spreadsheets, then launch and optimize based on real conversations."
+      },
+      {
+        title: "Integrations",
+        keywords: ["integrate", "integration", "whatsapp", "crm", "email", "sheets", "dashboard", "website", "forms"],
+        answer: "The landing page lists integrations for website chat and forms, WhatsApp replies and routing, CRM leads and stages, email alerts and summaries, sheets for logs and reporting, and dashboards for metrics and control."
+      },
+      {
+        title: "Security and controls",
+        keywords: ["security", "secure", "approval", "human", "risk", "finance", "legal", "audit", "logs", "control"],
+        answer: "The page is designed in a fintech style with controls for risk and oversight. Sensitive finance, refund, legal, pricing, or policy messages can be routed to humans. The workflow can include audit-friendly logs and role-based task routing."
+      },
+      {
+        title: "Pricing",
+        keywords: ["price", "pricing", "cost", "package", "budget", "quote", "custom"],
+        answer: "Pricing is custom because every AI agent depends on workflow complexity, data sources, channels, integrations, approval rules, and support needs. The best next step is to request a free consultation so JzarrTech can scope it properly."
+      },
+      {
+        title: "Contact",
+        keywords: ["contact", "email", "call", "callback", "consultation", "book", "start", "quote"],
+        answer: "You can contact JzarrTech at <a href=\"mailto:hello@jzarrtech.com?subject=AI%20Agent%20Bot%20Consultation\">hello@jzarrtech.com</a>. You can also use the hero form or the consultation form on this page to prepare an email request."
+      },
+      {
+        title: "Does it replace teams",
+        keywords: ["replace", "team", "human", "staff", "support", "sales"],
+        answer: "The bot is meant to support your team, not blindly replace it. It handles repetitive work, collects details, routes important cases, and gives sales/support teams better context."
+      },
+      {
+        title: "What is needed",
+        keywords: ["need", "requirements", "documents", "data", "faq", "sop", "setup"],
+        answer: "To start, JzarrTech usually needs your goals, current workflow, website or funnel links, FAQs, SOPs, examples of customer messages, CRM details, and the channels you want to automate."
+      }
+    ];
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+      })[char]);
+    }
+
+    function normalize(value) {
+      return String(value).toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+    }
+
+    function getBotAnswer(question) {
+      const clean = normalize(question);
+      if (!clean) {
+        return "Ask me about AI agents, automation features, pricing, integrations, JzarrTech services, or how to start.";
+      }
+
+      if (/(hello|hi|hey|salam|assalam)/.test(clean)) {
+        return "Hi. I can help with JzarrTech services and this AI Agent Bot landing page. Ask about automation, pricing, integrations, process, or how to book a consultation.";
+      }
+
+      const tokens = clean.split(" ").filter((token) => token.length > 2);
+      const ranked = botKnowledge.map((item) => {
+        let score = 0;
+        item.keywords.forEach((keyword) => {
+          if (clean.includes(keyword)) score += 3;
+        });
+        tokens.forEach((token) => {
+          if (normalize(item.title).includes(token)) score += 2;
+          if (normalize(item.answer).includes(token)) score += 1;
+        });
+        return { ...item, score };
+      }).sort((a, b) => b.score - a.score);
+
+      if (ranked[0] && ranked[0].score > 0) {
+        const related = ranked.slice(1, 3).filter((item) => item.score > 1).map((item) => item.title).join(", ");
+        return `${ranked[0].answer}${related ? `<br><br>You may also want to ask about: ${related}.` : ""}`;
+      }
+
+      return "I could not find an exact match in the local JzarrTech knowledge base. Try asking about AI Agent Bot features, WhatsApp automation, CRM integration, pricing, security controls, or contact details.";
+    }
+
+    function addChatMessage(type, content, html = false) {
+      const item = document.createElement("div");
+      item.className = `chat-msg ${type}`;
+      const bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      if (html) {
+        bubble.innerHTML = content;
+      } else {
+        bubble.textContent = content;
+      }
+      item.appendChild(bubble);
+      chatMessages.appendChild(item);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      runAnime({
+        targets: item,
+        opacity: [0, 1],
+        translateY: [12, 0],
+        scale: [0.98, 1],
+        duration: 360,
+        easing: "easeOutCubic"
+      });
+      return item;
+    }
+
+    function askBot(question) {
+      const trimmed = question.trim();
+      if (!trimmed) return;
+      addChatMessage("user", trimmed);
+      chatInput.value = "";
+      const thinking = addChatMessage("bot", "Thinking through the JzarrTech knowledge base...");
+      window.setTimeout(() => {
+        thinking.remove();
+        addChatMessage("bot", getBotAnswer(trimmed), true);
+      }, canAnime ? 480 : 120);
+    }
+
+    function renderChatSuggestions() {
+      chatSuggestions.innerHTML = "";
+      quickPrompts.forEach((prompt) => {
+        const chip = document.createElement("button");
+        chip.className = "chat-chip magnetic";
+        chip.type = "button";
+        chip.textContent = prompt;
+        chip.addEventListener("click", () => askBot(prompt));
+        chatSuggestions.appendChild(chip);
+      });
+      attachMagnetic(chatSuggestions.querySelectorAll(".chat-chip"));
+    }
+
+    function openChatbot() {
+      chatPanel.classList.add("is-open");
+      chatPanel.setAttribute("aria-hidden", "false");
+      chatLauncher.setAttribute("aria-expanded", "true");
+      sweepGlass(chatPanel);
+      runAnime({
+        targets: chatPanel,
+        opacity: [0, 1],
+        translateY: [18, 0],
+        scale: [0.94, 1],
+        duration: 440,
+        easing: "easeOutCubic"
+      });
+      if (!chatMessages.children.length) {
+        addChatMessage("bot", "Hi. I am the Jzarr AI Assistant. Ask me about JzarrTech services, this AI Agent Bot landing page, automation features, pricing, integrations, or how to start.");
+      }
+      chatInput.focus();
+    }
+
+    function closeChatbot() {
+      chatLauncher.setAttribute("aria-expanded", "false");
+      chatPanel.setAttribute("aria-hidden", "true");
+      if (canAnime) {
+        window.anime({
+          targets: chatPanel,
+          opacity: [1, 0],
+          translateY: [0, 14],
+          scale: [1, 0.96],
+          duration: 260,
+          easing: "easeInCubic",
+          complete: () => chatPanel.classList.remove("is-open")
+        });
+      } else {
+        chatPanel.classList.remove("is-open");
+      }
+    }
+
+    renderChatSuggestions();
+
+    chatLauncher.addEventListener("click", () => {
+      if (chatPanel.classList.contains("is-open")) {
+        closeChatbot();
+      } else {
+        openChatbot();
+      }
+    });
+
+    chatClose.addEventListener("click", closeChatbot);
+
+    chatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      askBot(chatInput.value);
+    });
+  </script>
+  <!-- Compiled TypeScript AI Prompt & Typewriter Engine -->
+  <script src="ai-prompt.js"></script>
+  <script>
+    if (typeof AIPromptEngine === "undefined") {
+      class AIPromptEngine {
+        constructor(config) {
+          this.targetElement = null;
+          this.commandElement = null;
+          this.statusElement = null;
+          this.latencyElement = null;
+          this.pillElements = null;
+          this.currentGoalIndex = 0;
+          this.currentText = '';
+          this.isDeleting = false;
+          this.isPaused = false;
+          this.timerId = null;
+          this.config = config;
+          this.init();
+        }
+        init() {
+          this.targetElement = document.querySelector(this.config.headingTargetSelector);
+          if (this.config.commandTextSelector) this.commandElement = document.querySelector(this.config.commandTextSelector);
+          if (this.config.statusTextSelector) this.statusElement = document.querySelector(this.config.statusTextSelector);
+          if (this.config.latencySelector) this.latencyElement = document.querySelector(this.config.latencySelector);
+          if (this.config.pillSelector) this.pillElements = document.querySelectorAll(this.config.pillSelector);
+          if (!this.targetElement) return;
+          this.attachPillListeners();
+          this.updateUIForCurrentGoal();
+          this.startLoop();
+        }
+        attachPillListeners() {
+          if (!this.pillElements) return;
+          this.pillElements.forEach((pill, idx) => {
+            pill.addEventListener('click', () => this.selectGoal(idx));
+          });
+        }
+        selectGoal(index) {
+          if (index < 0 || index >= this.config.goals.length) return;
+          if (this.timerId !== null) window.clearTimeout(this.timerId);
+          this.currentGoalIndex = index;
+          this.isDeleting = false;
+          this.currentText = '';
+          this.updateUIForCurrentGoal();
+          this.startLoop();
+        }
+        updateUIForCurrentGoal() {
+          const goal = this.config.goals[this.currentGoalIndex];
+          if (this.commandElement) this.commandElement.textContent = `"${goal.command}"`;
+          if (this.statusElement) this.statusElement.textContent = `✨ Status: ${goal.status}`;
+          if (this.latencyElement) this.latencyElement.textContent = `⚡ ${goal.latency}`;
+          if (this.pillElements) {
+            this.pillElements.forEach((pill, idx) => {
+              if (idx === this.currentGoalIndex) pill.classList.add('active');
+              else pill.classList.remove('active');
+            });
+          }
+        }
+        startLoop() {
+          const goal = this.config.goals[this.currentGoalIndex];
+          const fullText = goal.text;
+          if (!this.isDeleting && this.currentText === fullText) {
+            if (!this.isPaused) {
+              this.isPaused = true;
+              this.timerId = window.setTimeout(() => {
+                this.isPaused = false;
+                this.isDeleting = true;
+                this.startLoop();
+              }, this.config.pauseDurationMs);
+              return;
+            }
+          }
+          if (this.isDeleting && this.currentText === '') {
+            this.isDeleting = false;
+            this.currentGoalIndex = (this.currentGoalIndex + 1) % this.config.goals.length;
+            this.updateUIForCurrentGoal();
+            this.timerId = window.setTimeout(() => this.startLoop(), 400);
+            return;
+          }
+          const nextLength = this.isDeleting ? this.currentText.length - 1 : this.currentText.length + 1;
+          this.currentText = fullText.substring(0, nextLength);
+          if (this.targetElement) this.targetElement.textContent = this.currentText;
+          let baseSpeed = this.isDeleting ? this.config.deleteSpeedMs : this.config.typeSpeedMs;
+          const randomVariance = Math.floor(Math.random() * (this.isDeleting ? 20 : 45)) - 15;
+          const currentSpeed = Math.max(25, baseSpeed + randomVariance);
+          this.timerId = window.setTimeout(() => this.startLoop(), currentSpeed);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const goals = [
+          { text: 'Business Automation.', command: 'Deploy AI Agent for Business Automation', status: 'Generating Autonomous Workflow...', latency: '14ms', category: 'automation' },
+          { text: '24/7 Lead Qualification.', command: 'Qualify incoming leads via AI conversation', status: 'Intent Engine Active // Scoring Leads...', latency: '11ms', category: 'crm' },
+          { text: 'Autonomous CRM Workflows.', command: 'Sync live customer chat to CRM pipeline', status: 'Database Connected // Updating Stages...', latency: '16ms', category: 'crm' },
+          { text: 'Instant Customer Support.', command: 'Resolve support queries with human fallback', status: 'Knowledge Base Loaded // Answering 24/7...', latency: '12ms', category: 'support' },
+          { text: 'Finance & Ops Scaling.', command: 'Automate invoice verification and billing logs', status: 'Audit Guard Enabled // Verifying Rules...', latency: '18ms', category: 'finance' },
+          { text: 'WhatsApp & Web AI Routing.', command: 'Omnichannel routing across WhatsApp & Website', status: 'Webhooks Active // Routing Messages...', latency: '13ms', category: 'routing' }
+        ];
+        new AIPromptEngine({
+          headingTargetSelector: '.js-ai-heading-target',
+          commandTextSelector: '#promptCommandText',
+          statusTextSelector: '#promptStatusText',
+          latencySelector: '#promptLatency',
+          pillSelector: '.prompt-pill',
+          typeSpeedMs: 75,
+          deleteSpeedMs: 35,
+          pauseDurationMs: 3200,
+          goals: goals
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
