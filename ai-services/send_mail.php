@@ -6,6 +6,20 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
+$mailConfigPath = __DIR__ . '/mail-config.php';
+$mailConfig = file_exists($mailConfigPath) ? require $mailConfigPath : [];
+
+function mail_config_value(array $config, string $key, ?string $default = null): string
+{
+    $value = $config[$key] ?? getenv($key) ?: $default;
+
+    if ($value === null || $value === '') {
+        throw new Exception("Missing mail configuration value: {$key}");
+    }
+
+    return (string)$value;
+}
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
@@ -35,13 +49,13 @@ $mail = new PHPMailer(true);
 try {
     // ── SMTP Server Settings (JzarrTech Configuration) ───────────────────
     $mail->isSMTP();
-    $mail->Host       = 'mail.jzarrtech.com';
+    $mail->Host       = mail_config_value($mailConfig, 'SMTP_HOST');
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'code@jzarrtech.com';
-    $mail->Password   = '4#6o354I9b)p';
+    $mail->Username   = mail_config_value($mailConfig, 'SMTP_USER');
+    $mail->Password   = mail_config_value($mailConfig, 'SMTP_PASS');
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 2525;
-    $mail->Timeout    = 15;
+    $mail->Port       = (int) mail_config_value($mailConfig, 'SMTP_PORT', '2525');
+    $mail->Timeout    = (int) mail_config_value($mailConfig, 'SMTP_TIMEOUT', '15');
 
     // Bypass for cPanel / shared hosting self-signed SSL certificates
     $mail->SMTPOptions = array(
@@ -53,9 +67,13 @@ try {
     );
 
     // ── Routing ──────────────────────────────────────────────────────────
-    $mail->setFrom('code@jzarrtech.com', 'JzarrTech Web Portal'); 
-    $mail->addAddress('code@jzarrtech.com'); // Primary administrative inbox
-    $mail->addAddress('hello@jzarrtech.com'); // General inquiries inbox
+    $mail->setFrom(mail_config_value($mailConfig, 'MAIL_FROM'), 'JzarrTech Web Portal');
+    $mail->addAddress(mail_config_value($mailConfig, 'MAIL_TO_PRIMARY')); // Primary administrative inbox
+
+    $secondaryRecipient = $mailConfig['MAIL_TO_SECONDARY'] ?? getenv('MAIL_TO_SECONDARY') ?: '';
+    if ($secondaryRecipient !== '') {
+        $mail->addAddress((string)$secondaryRecipient); // General inquiries inbox
+    }
 
     if (!empty($clientEmail)) {
         $mail->addReplyTo($clientEmail, empty($clientName) ? 'JzarrTech Client' : $clientName);
