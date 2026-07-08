@@ -39,8 +39,9 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = 'code@jzarrtech.com';
     $mail->Password   = '4#6o354I9b)p';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 'ssl'
-    $mail->Port       = 465;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 2525;
+    $mail->Timeout    = 15;
 
     // Bypass for cPanel / shared hosting self-signed SSL certificates
     $mail->SMTPOptions = array(

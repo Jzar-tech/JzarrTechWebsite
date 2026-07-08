@@ -3045,6 +3045,57 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* Production performance patch: keep content responsive and reduce continuous paint work. */
+    html {
+      scroll-snap-type: none !important;
+      scroll-behavior: auto;
+    }
+
+    main > section,
+    section {
+      scroll-snap-align: none !important;
+      scroll-snap-stop: normal !important;
+      content-visibility: auto;
+      contain-intrinsic-size: 900px;
+    }
+
+    .ai-bg,
+    .neural-field,
+    .section-pulse,
+    .hero-orbit,
+    .ai-particle,
+    .neural-node,
+    .neural-link,
+    .data-bit {
+      display: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 120ms !important;
+    }
+
+    .site-header,
+    .hero-panel,
+    .control-console,
+    .contact-form,
+    .chatbot-panel,
+    .stat,
+    .feature-card,
+    .decision-card,
+    .matrix-card,
+    .step,
+    .integration,
+    .review {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      will-change: auto !important;
+    }
+
   </style>
 </head>
 
@@ -3682,7 +3733,8 @@
   <script>
     const year = document.getElementById("year");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const canAnime = typeof window.anime === "function" && !prefersReducedMotion;
+    const performanceMode = true;
+    const canAnime = false;
     const neuralField = document.getElementById("neuralField");
     year.textContent = new Date().getFullYear();
 
@@ -3705,7 +3757,7 @@
     }
 
     function buildAIMotionField() {
-      if (!neuralField || prefersReducedMotion) return;
+      if (!neuralField || prefersReducedMotion || performanceMode) return;
 
       neuralField.textContent = "";
       const fragment = document.createDocumentFragment();
@@ -3784,7 +3836,7 @@
     function attachPointerGlow(elements) {
       elements.forEach((element) => {
         element.addEventListener("mousemove", (event) => {
-          if (prefersReducedMotion || window.innerWidth < 780) return;
+          if (performanceMode || prefersReducedMotion || window.innerWidth < 780) return;
           const box = element.getBoundingClientRect();
           const x = ((event.clientX - box.left) / box.width) * 100;
           const y = ((event.clientY - box.top) / box.height) * 100;
@@ -3799,7 +3851,7 @@
     const aiBg = document.getElementById("aiBg");
     let aiPointerFrame = 0;
     window.addEventListener("pointermove", (event) => {
-      if (!aiBg || prefersReducedMotion || window.innerWidth < 780 || aiPointerFrame) return;
+      if (performanceMode || !aiBg || prefersReducedMotion || window.innerWidth < 780 || aiPointerFrame) return;
       aiPointerFrame = window.requestAnimationFrame(() => {
         const x = (event.clientX / window.innerWidth - 0.5) * 18;
         const y = (event.clientY / window.innerHeight - 0.5) * 14;
@@ -3809,7 +3861,7 @@
     });
 
     function sweepGlass(target) {
-      if (!target || prefersReducedMotion) return;
+      if (!target || performanceMode || prefersReducedMotion) return;
       target.classList.remove("glass-sweep");
       void target.offsetWidth;
       target.classList.add("glass-sweep");
@@ -3957,7 +4009,7 @@
     tiltTargets.forEach((card) => {
       card.classList.add("js-tilt");
       card.addEventListener("mousemove", (event) => {
-        if (prefersReducedMotion || window.innerWidth < 780) return;
+        if (performanceMode || prefersReducedMotion || window.innerWidth < 780) return;
         const box = card.getBoundingClientRect();
         const x = event.clientX - box.left;
         const y = event.clientY - box.top;
@@ -3987,7 +4039,7 @@
         button.dataset.magneticReady = "true";
         button.classList.add("magnetic");
         button.addEventListener("mousemove", (event) => {
-          if (prefersReducedMotion || window.innerWidth < 780) return;
+          if (performanceMode || prefersReducedMotion || window.innerWidth < 780) return;
           const box = button.getBoundingClientRect();
           const x = (event.clientX - box.left - box.width / 2) * 0.18;
           const y = (event.clientY - box.top - box.height / 2) * 0.18;
